@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Leads - CRM</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script type="module" src="https://unpkg.com/cally"></script>
+
+    <style>
+        /* Modern styling for the calendar component */
+        calendar-range {
+            --color-accent: #6366f1;
+            background: white;
+            border-radius: 12px;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+
+
+
+    <!--Navbar-->
+    <div class="navbar bg-base-100  shadow-sm ">
+
+        <!-- 🔹 LEFT SIDE -->
+        <div class="flex-1 flex items-center gap-8">
+
+            <!-- Mobile Menu -->
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                    <span class="material-icons">menu</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="./Dashboard.html">Dashboard</a></li>
+                    <li><a href="./AllLeads.html">All Leads</a></li>
+                    <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                    <li><a href="./MyLeads.html">My Leads</a></li>
+                </ul>
+            </div>
+
+            <!-- CRM -->
+            <a class="font-bold text-2xl">CRM</a>
+
+            <!-- Desktop Links -->
+            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2">
+                <li class="text-md font-bold"><a href="./Dashboard.html">Dashboard</a></li>
+                <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
+                <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+            </ul>
+
+        </div>
+
+        <!-- 🔹 RIGHT SIDE ICON DROPDOWNS -->
+        <div class="flex-none flex items-center gap-4">
+
+            <!-- 📩 Message Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">mail</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+                    <li class="menu-title">Messages</li>
+                    <li><a>New lead from Rahul</a></li>
+                    <li><a>Follow-up reminder</a></li>
+                    <li><a>View all messages</a></li>
+                </ul>
+            </div>
+
+            <!-- 🔔 Notification Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">notifications</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+                    <li class="menu-title">Notifications</li>
+                    <li><a>New Lead Assigned</a></li>
+                    <li><a>Lead Status Updated</a></li>
+                    <li><a>System Alert</a></li>
+                </ul>
+            </div>
+
+            <!-- 👤 User Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                    <span class="material-icons">account_circle</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">Soumyabrata</li>
+                    <li><a>Profile</a></li>
+                    <li><a>Settings</a></li>
+                    <li><a class="text-error">Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+<main class="flex flex-col min-h-screen bg-slate-50">
+
+    <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 p-4 bg-white border-b border-slate-200">
+        
+        <h1 class="text-2xl font-bold text-slate-800 shrink-0">My Leads</h1>
+
+        <div class="flex flex-wrap items-center gap-3 flex-1 justify-end">
+            
+            <div class="relative w-full md:w-64">
+                <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+                <input type="text" placeholder="Name / Phone / Email" class="input input-sm input-bordered w-full pl-9 focus:outline-indigo-500" />
+            </div>
+
+            <select class="select select-sm select-bordered w-full md:w-44 focus:outline-indigo-500 text-slate-600">
+                <option disabled selected>Select Lead Type</option>
+                <option>Hot Lead</option>
+                <option>Cold Lead</option>
+            </select>
+             
+            <!--Calender-->
+            <div class="dropdown dropdown-end w-full md:w-auto">
+                <div tabindex="0" role="button" class="btn btn-sm btn-outline border-slate-300 w-full md:w-auto font-normal normal-case text-slate-600">
+                    <span class="material-icons text-sm mr-1 text-slate-400">calendar_month</span>
+                    06-02-2026 to 13-02-2026
+                </div>
+                <div tabindex="0" class="dropdown-content z-[50] mt-2 p-1 shadow-2xl bg-white rounded-xl border border-slate-200">
+                    <calendar-range value="2026-02-06/2026-02-13" class="[--color-accent:#4f46e5] p-2 bg-white rounded-lg">
+                        <calendar-month class="text-sm"></calendar-month>
+                    </calendar-range>
+                </div>
+            </div>
+
+            <button class="btn btn-sm btn-primary bg-indigo-600 border-none hover:bg-indigo-700 px-8 shadow-sm">
+                Search
+            </button>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap gap-5 p-4">
+        
+        <div class="flex-none w-full sm:w-64 bg-[#fffaf0] border-l-4 border-l-orange-400 shadow-sm rounded-r-lg">
+            <div class="p-4 flex flex-col">
+                <span class="text-[11px] uppercase tracking-wider font-bold text-orange-700 opacity-70">Total Leads</span>
+                <div class="flex items-baseline gap-2 mt-1">
+                    <span class="text-3xl font-bold text-slate-800">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-none w-full sm:w-64 bg-[#f0fdf4] border-l-4 border-l-emerald-400 shadow-sm rounded-r-lg">
+            <div class="p-4 flex flex-col">
+                <span class="text-[11px] uppercase tracking-wider font-bold text-emerald-700 opacity-70">Converted Leads</span>
+                <div class="flex items-baseline gap-2 mt-1">
+                    <span class="text-3xl font-bold text-slate-800">0</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="flex-1 w-full p-4 overflow-x-auto">
+        <div class="w-full h-full bg-white border border-slate-200 rounded-xl min-h-[400px] flex items-center justify-center">
+            
+            <div class="text-center text-slate-400">
+                <span class="material-icons text-6xl opacity-20">table_chart</span>
+                <p class="mt-2 font-medium">Table goes here (Full Width Available)</p>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+</body>
+
+</html>

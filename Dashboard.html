@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script type="module" src="https://unpkg.com/cally"></script>
+
+    <style>
+        /* Custom styling for Cally calendar to look cleaner */
+        calendar-range {
+            --color-accent: #4f46e5;
+            background: white;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+
+
+    <!--Navbar-->
+    <div class="navbar bg-base-100  shadow-sm ">
+
+        <!-- 🔹 LEFT SIDE -->
+        <div class="flex-1 flex items-center gap-8">
+
+            <!-- Mobile Menu -->
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                    <span class="material-icons">menu</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Dashboard</a></li>
+                    <li><a href="./AllLeads.html">All Leads</a></li>
+                    <li><a>Follow Up Leads</a></li>
+                    <li><a>My Leads</a></li>
+                </ul>
+            </div>
+
+            <!-- CRM -->
+            <a class="font-bold text-2xl">CRM</a>
+
+            <!-- Desktop Links -->
+            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2">
+                <li class="text-md font-bold"><a href="./Dashboard.html">Dashboard</a></li>
+                <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
+                <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+            </ul>
+
+        </div>
+
+        <!-- 🔹 RIGHT SIDE ICON DROPDOWNS -->
+        <div class="flex-none flex items-center gap-4">
+
+            <!-- 📩 Message Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">mail</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+                    <li class="menu-title">Messages</li>
+                    <li><a>New lead from Rahul</a></li>
+                    <li><a>Follow-up reminder</a></li>
+                    <li><a>View all messages</a></li>
+                </ul>
+            </div>
+
+            <!-- 🔔 Notification Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">notifications</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+                    <li class="menu-title">Notifications</li>
+                    <li><a>New Lead Assigned</a></li>
+                    <li><a>Lead Status Updated</a></li>
+                    <li><a>System Alert</a></li>
+                </ul>
+            </div>
+
+            <!-- 👤 User Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                    <span class="material-icons">account_circle</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">Soumyabrata</li>
+                    <li><a>Profile</a></li>
+                    <li><a>Settings</a></li>
+                    <li><a class="text-error">Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <main class="p-8 max-w-7xl mx-auto">
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-800">Leads Overview</h1>
+                <p class="text-sm text-slate-500">Track your performance and conversions</p>
+            </div>
+
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button"
+                    class="btn btn-sm bg-white border-slate-200 hover:border-indigo-400 font-medium normal-case shadow-sm">
+                    <span class="material-icons text-xs mr-1 text-slate-400">calendar_month</span>
+                    10 Feb - 13 Feb 2026
+                </div>
+                <div tabindex="0"
+                    class="dropdown-content z-[1] mt-2 p-2 shadow-2xl bg-white rounded-xl border border-slate-100">
+                    <calendar-range value="2026-02-10/2026-02-13">
+                        <calendar-month class="text-sm"></calendar-month>
+                    </calendar-range>
+                </div>
+            </div>
+        </div>
+          
+        <!--Cards-->
+        <div class="flex flex-wrap gap-5">
+             <!--Card1-->
+            <div class="flex-none w-full sm:w-64 bg-white border-l-4 border-l-orange-400 shadow-sm rounded-r-lg"
+                style="background-color: #fffaf0;">
+                <div class="p-5 flex flex-col">
+                    <span class="text-[11px] uppercase tracking-wider font-bold text-orange-700 opacity-70">Total
+                        Assigned</span>
+                    <div class="flex items-baseline gap-2 mt-1">
+                        <span class="text-3xl font-bold text-slate-800">0</span>
+                        <span class="text-xs text-slate-400 font-normal text-nowrap">leads this week</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--Card2-->
+            <div class="flex-none w-full sm:w-64 bg-white border-l-4 bg border-l-emerald-400 shadow-sm rounded-r-lg"
+                style="background-color: #f0fdf4;">
+                <div class="p-5 flex flex-col">
+                    <span
+                        class="text-[11px] uppercase tracking-wider font-bold text-emerald-700 opacity-70">Converted</span>
+                    <div class="flex items-baseline gap-2 mt-1">
+                        <span class="text-3xl font-bold text-slate-800">0</span>
+                        <span class="text-xs text-slate-400 font-normal text-nowrap">closed deals</span>
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+        
+    </main>
+
+</body>
+
+</html>
