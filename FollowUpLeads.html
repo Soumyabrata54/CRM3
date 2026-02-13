@@ -103,17 +103,21 @@
 
 
         <!--header + filter-->
-        <div class="flex justify-between">
+        <div
+            class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 p-4 bg-white border-b border-slate-200">
 
+            <h1 class="text-2xl font-bold text-slate-800 shrink-0">FollowUp Leads</h1>
 
-            <h1 class="text-black font-bold flex-1 text-2xl m-3">FollowUp Leads</h1>
+            <div class="flex flex-wrap items-center gap-3 flex-1 xl:justify-end">
 
-            <!--filter-->
-            <div class="navbar bg-base-100 mt-3 flex-2 box-rounded shadow-sm px-3 py-2 gap-3 flex flex-wrap">
+                <div class="relative w-full sm:w-56 md:w-64">
+                    <span
+                        class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+                    <input type="text" placeholder="Name / Email / Phone"
+                        class="input input-sm input-bordered w-full pl-9 focus:outline-indigo-500" />
+                </div>
 
-                <input type="text" placeholder="Name/Email/Phone" class="input input-bordered input-sm w-56" />
-
-                <select class="select select-bordered select-sm w-48">
+                <select class="select select-sm select-bordered w-full sm:w-48 focus:outline-indigo-500 text-slate-600">
                     <option disabled selected>Select Lead Type</option>
                     <option>New</option>
                     <option>Lead Verified</option>
@@ -122,10 +126,9 @@
                     <option>Duplicate</option>
                 </select>
 
-                <!--Calender-->
-                <div class="dropdown dropdown-end w-full md:w-auto">
+                <div class="dropdown dropdown-end w-full sm:w-auto">
                     <div tabindex="0" role="button"
-                        class="btn btn-sm btn-outline border-slate-300 w-full md:w-auto font-normal normal-case text-slate-600">
+                        class="btn btn-sm btn-outline border-slate-300 w-full sm:w-auto font-normal normal-case text-slate-600">
                         <span class="material-icons text-sm mr-1 text-slate-400">calendar_month</span>
                         06-02-2026 to 13-02-2026
                     </div>
@@ -138,10 +141,14 @@
                     </div>
                 </div>
 
-                <button class="btn btn-sm p-3 bg-blue-300">Search</button>
+                <button
+                    class="btn btn-sm btn-primary bg-indigo-600 border-none hover:bg-indigo-700 px-6 shadow-sm w-full sm:w-auto">
+                    Search
+                </button>
             </div>
 
         </div>
+
         <!--table-->
         <table class="table table-xs bg-white mt-3 px-4 ">
 
@@ -368,7 +375,7 @@
                                 </div>
                             </div>
 
-                            <div class="tooltip" data-tip="yufyuv">
+                            <div class="tooltip" data-tip="WhatsApp Not Verified">
                                 <div class="w-8 h-8 flex items-center justify-center leading-none">
                                     <svg class="w-5 h-5 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                         <path
