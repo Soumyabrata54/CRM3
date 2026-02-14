@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations CRM</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen  font-sans">
+
+    <!--Navbar-->
+    <div class="navbar bg-base-100 sticky top-0 z-50  shadow-md ">
+
+        <!-- 🔹 LEFT SIDE -->
+        <div class="flex-1 flex items-center gap-8">
+
+            <!-- Mobile Menu -->
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                    <span class="material-icons">menu</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="./Dashboard.html">Dashboard</a></li>
+                    <li><a href="./AllLeads.html">All Leads</a></li>
+                    <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                    <li><a href="./MyLeads.html">My Leads</a></li>
+                </ul>
+            </div>
+
+            <!-- CRM -->
+
+            <a class="font-bold  text-2xl">CRM</a>
+
+
+            <!-- Desktop Links -->
+            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2">
+                <li class="text-md font-bold"><a href="./Dashboard.html">Dashboard</a></li>
+                <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
+                <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+            </ul>
+
+        </div>
+
+        <!-- 🔹 RIGHT SIDE ICON DROPDOWNS -->
+        <div class="flex-none flex items-center gap-4">
+
+            <!-- 📩 Message Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">mail</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+                    <li class="menu-title">Messages</li>
+                    <li><a>New lead from Rahul</a></li>
+                    <li><a>Follow-up reminder</a></li>
+                    <li><a>View all messages</a></li>
+                </ul>
+            </div>
+
+            <!-- 🔔 Notification Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">notifications</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+                    <li class="menu-title">Notifications</li>
+                    <li><a>New Lead Assigned</a></li>
+                    <li><a>Lead Status Updated</a></li>
+                    <li><a>System Alert</a></li>
+                </ul>
+            </div>
+
+            <!-- 👤 User Dropdown -->
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                    <span class="material-icons">account_circle</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">Soumyabrata</li>
+                    <li><a>Profile</a></li>
+                    <li><a>Settings</a></li>
+                    <li><a class="text-error">Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Main Body-->
+    <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-xl mt-5 border border-gray-200 overflow-hidden">
+
+        <!--Header-->
+        <div
+            class="p-3 border-b border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">Destinations</h1>
+                <p class="text-sm text-gray-500 mt-1">Manage travel destinations</p>
+            </div>
+
+            <div class="flex gap-3">
+                <button class="btn  bg-gray-600 text-white hover:bg-gray-700 btn-sm md:btn-md font-normal">
+                    Lead Costing
+                </button>
+
+                <!--Create Destination Modal-->
+                <!-- Open the modal using ID.showModal() method -->
+                <button class="btn text-white bg-gray-600" onclick="my_modal_2.showModal()">Create New Destination</button>
+                <dialog id="my_modal_2" class="modal">
+                    <div class="modal-box max-w-4xl">
+                        <!--CreateDestModal.html-->
+                        <div class="card w-full  bg-base-100 shadow-xl rounded-md">
+                            <div class="card-body p-6">
+
+                                <div class="flex justify-between items-center border-b border-gray-200 pb-4 mb-4">
+                                    <h2 class="card-title text-xl font-bold text-gray-700">Create New Destination</h2>
+
+                                </div>
+
+                                <form class="space-y-4">
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                                        <div class="form-control w-full">
+                                            <label class="label">
+                                                <span class="label-text font-semibold text-gray-600">Destination
+                                                    Name</span>
+                                            </label>
+                                            <input type="text" placeholder="Enter destination name"
+                                                class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                                        </div>
+
+                                        <div class="form-control w-full">
+                                            <label class="label">
+                                                <span class="label-text font-semibold text-gray-600">Description</span>
+                                            </label>
+                                            <input type="text" placeholder="Write a short description..."
+                                                class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="form-control w-full">
+                                            <label class="label">
+                                                <span class="label-text font-semibold text-gray-600">Status</span>
+                                            </label>
+                                            <select
+                                                class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
+                                                <option disabled selected>Select Status</option>
+                                                <option value="active">Active</option>
+                                                <option value="inactive">Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-actions justify-start pt-4">
+                                        <button type="submit"
+                                            class="btn bg-indigo-500 hover:bg-indigo-600 text-white border-none w-32">
+                                            Submit
+                                        </button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <form method="dialog" class="modal-backdrop">
+                        <button>close</button>
+                    </form>
+                </dialog>
+            </div>
+        </div>
+
+        <!--Table-->
+        <div class="p-0 m-3">
+            <div class="overflow-x-auto">
+                <table class="table w-full">
+                    <thead class="bg-gray-50 text-gray-600 uppercase text-xs font-semibold">
+                        <tr>
+                            <th class="py-4 pl-6">#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Created At</th>
+                            <th class="pr-6">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-sm text-gray-700 divide-y divide-gray-100">
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">1</td>
+                            <td class="font-semibold text-gray-800">Thailand</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>04-06-2025 09:44:54</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">2</td>
+                            <td class="font-semibold text-gray-800">Bhutan</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>17-06-2025 07:07:01</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">3</td>
+                            <td class="font-semibold text-gray-800">Dubai</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>23-07-2025 11:48:25</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">4</td>
+                            <td class="font-semibold text-gray-800">Vietnam</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>28-08-2025 06:40:26</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">5</td>
+                            <td class="font-semibold text-gray-800">Australia</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>04-09-2025 05:15:24</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">6</td>
+                            <td class="font-semibold text-gray-800">Bali</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>08-10-2025 05:10:44</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">7</td>
+                            <td class="font-semibold text-gray-800">Europe</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>08-10-2025 05:10:54</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">8</td>
+                            <td class="font-semibold text-gray-800">Singapore</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>08-10-2025 05:11:05</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">9</td>
+                            <td class="font-semibold text-gray-800">Australia</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-warning text-white badge-sm font-medium">Inactive</span></td>
+                            <td>08-10-2025 05:11:16</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="pl-6 font-medium">10</td>
+                            <td class="font-semibold text-gray-800">Kashmir</td>
+                            <td class="text-gray-400 italic">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
+                            <td>19-01-2026 07:27:25</td>
+                            <td class="pr-6"><a href="#"
+                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-between items-center p-4 border-t border-gray-100">
+                <span class="text-xs text-gray-500">Showing 1 to 10 of 10 entries</span>
+                <div class="join">
+                    <button class="join-item btn btn-sm btn-outline">Previous</button>
+                    <button
+                        class="join-item btn btn-sm btn-active bg-indigo-600 text-white border-indigo-600">1</button>
+                    <button class="join-item btn btn-sm btn-outline">Next</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

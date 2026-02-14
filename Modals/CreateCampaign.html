@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Campaign</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+    <style>
+        /* Custom styles to match Daisy UI inputs */
+        calendar-date {
+            --cally-color-accent: #6366f1; /* Indigo-500 */
+            background: white;
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="card w-full max-w-4xl bg-base-100 shadow-xl rounded-md overflow-visible">
+        <div class="card-body p-6 overflow-visible">
+            
+            <div class="flex justify-between items-center border-b border-gray-200 pb-4 mb-4">
+                <h2 class="card-title text-xl font-bold text-gray-700">Create New Campaign</h2>
+                <button class="btn btn-sm btn-circle btn-ghost text-gray-400 text-lg">✕</button>
+            </div>
+
+            <form class="space-y-6">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="form-control w-full">
+                        <label class="label"><span class="label-text font-semibold text-gray-600">Campaign Name</span></label>
+                        <input type="text" placeholder="Enter campaign name" class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                    </div>
+                    <div class="form-control w-full">
+                        <label class="label"><span class="label-text font-semibold text-gray-600">Description</span></label>
+                        <input type="text" placeholder="Write a short description..." class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <div class="form-control w-full">
+                        <label class="label"><span class="label-text font-semibold text-gray-600">Type</span></label>
+                        <select class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
+                            <option selected>NA</option>
+                            <optgroup label="Google">
+                                <option>SEM</option>
+                                <option>Organic</option>
+                                <option>YouTube</option>
+                            </optgroup>
+                            <optgroup label="Social Media">
+                                <option>Facebook</option>
+                                <option>Instagram</option>
+                                <option>LinkedIn</option>
+                            </optgroup>
+                            <optgroup label="Mailer">
+                                <option>Email Marketing</option>
+                            </optgroup>
+                            <optgroup label="WhatsApp">
+                                <option>WhatsApp Campaign</option>
+                                <option>WhatsApp Organic</option>
+                            </optgroup>
+                            <optgroup label="Offline">
+                                <option>Inbound Call</option>
+                                <option>Expert Generated</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-control w-full">
+                        <label class="label"><span class="label-text font-semibold text-gray-600">Destination</span></label>
+                        <select class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
+                            <option disabled selected>Select Destination</option>
+                            <option>Thailand</option>
+                            <option>Bhutan</option>
+                            <option>Dubai</option>
+                            <option>Vietnam</option>
+                            <option>Australia</option>
+                            <option>Bali</option>
+                            <option>Europe</option>
+                            <option>Singapore</option>
+                            <option>Kashmir</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control w-full">
+                        <label class="label"><span class="label-text font-semibold text-gray-600">Status</span></label>
+                        <select class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
+                            <option disabled selected>Select Status</option>
+                            <option>Draft</option>
+                            <option>Active</option>
+                            <option>Paused</option>
+                            <option>Completed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <div class="form-control">
+                        <label class="label"><span class="label-text font-semibold text-gray-600">Start Date</span></label>
+                        <div class="flex gap-2 relative group-date-picker">
+                            <div class="w-full relative">
+                                <input type="text" id="startDate" placeholder="YYYY-MM-DD" class="input input-bordered w-full cursor-pointer focus:outline-none" readonly />
+                                <div id="startCalendar" class="absolute top-12 left-0 z-50 shadow-xl border rounded-lg hidden bg-white">
+                                    <calendar-date onchange="selectDate('startDate', 'startCalendar', event)"></calendar-date>
+                                </div>
+                            </div>
+                            <input type="time" class="input input-bordered focus:outline-none focus:border-indigo-500" />
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label"><span class="label-text font-semibold text-gray-600">End Date</span></label>
+                        <div class="flex gap-2 relative group-date-picker">
+                            <div class="w-full relative">
+                                <input type="text" id="endDate" placeholder="YYYY-MM-DD" class="input input-bordered w-full cursor-pointer focus:outline-none" readonly />
+                                <div id="endCalendar" class="absolute top-12 left-0 z-50 shadow-xl border rounded-lg hidden bg-white">
+                                    <calendar-date onchange="selectDate('endDate', 'endCalendar', event)"></calendar-date>
+                                </div>
+                            </div>
+                            <input type="time" class="input input-bordered focus:outline-none focus:border-indigo-500" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-control w-full">
+                     <label class="label"><span class="label-text font-semibold text-gray-600">Source (optional)</span></label>
+                     <input type="text" class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                </div>
+
+                <div class="card-actions justify-start pt-4">
+                    <button type="button" class="btn bg-[#48c708] hover:bg-[#3da807] text-white border-none px-6">
+                        Create Campaign
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 1. Function to handle date selection from Cally
+        function selectDate(inputId, calendarId, event) {
+            const input = document.getElementById(inputId);
+            const calendar = document.getElementById(calendarId);
+            
+            // Cally emits the date in event.target.value
+            input.value = event.target.value;
+            
+            // Hide the calendar after selection
+            calendar.classList.add('hidden');
+        }
+
+        // 2. Function to toggle calendar visibility
+        function setupCalendarToggle(inputId, calendarId) {
+            const input = document.getElementById(inputId);
+            const calendar = document.getElementById(calendarId);
+
+            input.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent immediate closing
+                
+                // Close all other calendars first
+                document.querySelectorAll('[id$="Calendar"]').forEach(el => {
+                    if (el.id !== calendarId) el.classList.add('hidden');
+                });
+
+                calendar.classList.toggle('hidden');
+            });
+        }
+
+        // Initialize Toggles
+        setupCalendarToggle('startDate', 'startCalendar');
+        setupCalendarToggle('endDate', 'endCalendar');
+
+        // 3. Close calendars when clicking outside
+        document.addEventListener('click', function(event) {
+            // Check if the click path includes any date picker group
+            const isClickInside = event.composedPath().some(element => 
+                element.classList && element.classList.contains('group-date-picker')
+            );
+
+            if (!isClickInside) {
+                document.getElementById('startCalendar').classList.add('hidden');
+                document.getElementById('endCalendar').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
