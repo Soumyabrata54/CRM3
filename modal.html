@@ -1,251 +1,284 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Lead</title>
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Lead</title>
 
-  <body class="bg-slate-100 p-6 min-h-screen text-sm">
-    <div class="max-w-7xl bg-slate-100 p-6 min-h-screen text-sm mx-auto space-y-6">
-      <!-- Title -->
-      <h2 class="text-xl font-semibold">Edit Requirement of Lead #16016</h2>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-      <!-- ================= FLEX ROW ================= -->
-      <div class="flex gap-6">
-        <!-- ================= USER DETAILS ================= -->
-        <div class="card bg-white shadow-sm flex-1">
-          <div class="card-body p-4 space-y-4">
-            <h3
-              class="font-semibold text-xl uppercase tracking-wide text-slate-700"
-            >
-              User Details
-            </h3>
+  <script type="module" src="https://unpkg.com/cally"></script>
 
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="label p-0 mb-1 text-xs">Name</label>
-                <input
-                  type="text"
-                  value="Zehwa jahan"
-                  class="input input-bordered input-sm w-full"
-                />
-              </div>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+</head>
 
-              <div>
-                <label class="label p-0 mb-1 text-xs">Email</label>
-                <input
-                  placeholder= ""
-                  type="email"
-                  
-                  class="input input-bordered input-sm w-full"
-                />
-              </div>
+<body class="bg-slate-100 p-6 min-h-screen ">
 
-              <div>
-                <label class="label p-0 mb-1 text-xs">Mobile</label>
-                <input
-                  type="text"
-                  value="+919347892654"
-                  class="input input-bordered input-sm w-full"
-                />
-              </div>
+  <div class="bg-slate-100 p-6 h-fit text-sm mx-auto space-y-6" onclick="handleGlobalClick(event)">
+    <h2 class="text-xl font-semibold">Edit Requirement of Lead #16016</h2>
 
-              <div>
-                <label class="label p-0 mb-1 text-xs">City</label>
-                <input
-                  type="text"
-                  value="-"
-                  class="input input-bordered input-sm w-full"
-                />
-              </div>
+    <div class="flex gap-6">
+
+      <!--User Details-->
+      <div class="card bg-white shadow-sm flex-1">
+        <div class="card-body p-4 space-y-4">
+          <h3 class="font-semibold text-xl uppercase tracking-wide text-slate-700">User Details</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <div><label class="label p-0 mb-1 text-black">Name</label>
+              <input type="text" value="Zehwa jahan" class="input input-bordered input-sm w-full" />
             </div>
-          </div>
-        </div>
-
-        <!-- ================= TRIP REQUIREMENT ================= -->
-        <div class="card bg-white shadow-sm flex-[2]">
-          <div class="card-body p-4 space-y-4">
-            <h3
-              class="font-semibold text-xl uppercase tracking-wide text-slate-700"
-            >
-              Trip Requirement Details
-            </h3>
-
-            <div class="grid grid-cols-3 gap-3">
-              <div>
-                <label class="label p-0 mb-1 text-xs">Destination</label>
-                <input
-                  type="text"
-                  value="Dubai"
-                  class="input input-bordered input-sm w-full"
-                />
-              </div>
-
-              <div>
-                <label class="label p-0 mb-1 text-xs">Duration (Days)</label>
-                <input
-                  type="number"
-                  value="6"
-                  class="input input-bordered input-sm w-full"
-                />
-              </div>
-
-              <div>
-                <label class="label p-0 mb-1 text-xs">Leaving From</label>
-                <input
-                  type="text"
-                  value="Hyderabad"
-                  class="input input-bordered input-sm w-full"
-                />
-              </div>
-
-              <div>
-                <label class="label p-0 mb-1 text-xs">Departure Date</label>
-               <input type="text" class="input pika-single" placeholder="date" id="myDatepicker">
-              </div>
-
-              <div>
-                <label class="label p-0 mb-1 text-xs">When to Book</label>
-                <input type="text" class="input pika-single" placeholder="date" id="myDatepicker2">
-              </div>
-
-              <!-- Trip Type -->
-              <div>
-                <label class="label p-0 mb-1 text-xs">Trip Type</label>
-                <select class="select select-bordered select-sm w-full">
-                  <option>Select Trip Type</option>
-                  <option>Solo Travel</option>
-                  <option>Honeymoon Trip</option>
-                  <option>Family Trip</option>
-                  <option>Friends</option>
-                  <option>Group Query</option>
-                  <option>Couple</option>
-                  <option>Religious</option>
-                  <option>Offbeat</option>
-                  <option>Adventure</option>
-                  <option>Wild Life</option>
-                </select>
-              </div>
-
-              <!-- Ticket Booked -->
-              <div>
-                <label class="label p-0 mb-1 text-xs">Is Ticket Booked?</label>
-                <select class="select select-bordered select-sm w-full">
-                  <option>Not Booked</option>
-                  <option>Booked</option>
-                </select>
-              </div>
-
-              <!-- Preferred Time -->
-              <div>
-                <label class="label p-0 mb-1 text-xs"
-                  >Preferred Time To Call</label
-                >
-                <input
-                  type="datetime-local"
-                  class="input input-bordered input-sm w-full"
-                />
-              </div>
-
-              <!-- Preferred Way -->
-              <div>
-                <label class="label p-0 mb-1 text-xs"
-                  >Preferred Way Of Communication</label
-                >
-                <select class="select select-bordered select-sm w-full">
-                  <option>Select Communication type</option>
-                  <option>Phone</option>
-                  <option>Email</option>
-                  <option>Whatsapp</option>
-                  <option>Meeting</option>
-                </select>
-              </div>
-
-              <!-- Preferred Language -->
-              <div>
-                <label class="label p-0 mb-1 text-xs">Preferred Language</label>
-                <select
-                  class="select select-bordered select-sm w-full max-h-40 overflow-y-auto"
-                >
-                  <option>Select Communication type</option>
-                  <option>Assamese</option>
-                  <option>Bengali</option>
-                  <option>Bodo</option>
-                  <option>Dogri</option>
-                  <option>Gujarati</option>
-                  <option>Hindi</option>
-                  <option>Kannada</option>
-                  <option>Kashmiri</option>
-                  <option>Konkani</option>
-                  <option>Maithili</option>
-                  <option>Malayalam</option>
-                  <option>Manipuri</option>
-                  <option>Marathi</option>
-                  <option>Nepali</option>
-                  <option>Odia</option>
-                  <option>Punjabi</option>
-                  <option>Sanskrit</option>
-                  <option>Santali</option>
-                  <option>Sindhi</option>
-                  <option>Tamil</option>
-                  <option>Telugu</option>
-                  <option>Urdu</option>
-                  <option>English</option>
-                </select>
-              </div>
-            </div>
+            <div><label class="label p-0 mb-1 text-black">Email</label><input type="email"
+                class="input input-bordered input-sm w-full" /></div>
+            <div><label class="label p-0 mb-1 text-black">Mobile</label><input type="text" value="+919347892654"
+                class="input input-bordered input-sm w-full" /></div>
+            <div><label class="label p-0 mb-1 text-black">City</label><input type="text" value="-"
+                class="input input-bordered input-sm w-full" /></div>
           </div>
         </div>
       </div>
 
-      <!-- ================= NOTES + BUTTON ROW ================= -->
-      <div class="card bg-white shadow-sm">
-        <div class="card-body p-4">
-          <div class="flex gap-4 items-end">
-            <div class="flex-1">
-              <label class="label p-0 mb-1 text-xm text-black font-black"
-                >Lead Requirement Note</label
-              >
-              <textarea
-                class="textarea textarea-bordered textarea-sm w-full h-24 resize-none"
-              ></textarea>
+      <!--Requirements Field-->
+      <div class="card bg-white shadow-sm flex-[2]">
+        <div class="card-body p-4 space-y-4">
+          <h3 class="font-semibold text-xl uppercase tracking-wide text-slate-700">Trip Requirement Details</h3>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div><label class="label p-0 mb-1 text-xs">Destination</label><input type="text" value="Dubai"
+                class="input input-bordered input-sm w-full" /></div>
+            <div><label class="label p-0 mb-1 text-xs">Duration (Days)</label><input type="number" value="6"
+                class="input input-bordered input-sm w-full" /></div>
+            <div><label class="label p-0 mb-1 text-xs">Leaving From</label><input type="text" value="Hyderabad"
+                class="input input-bordered input-sm w-full" /></div>
+
+            <div class="relative date-picker-container">
+              <label class="label p-0 mb-1 text-xs">Departure Date</label>
+              <input type="text" id="departure-input"
+                class="input input-bordered input-sm w-full cursor-pointer bg-white" placeholder="Select Date" readonly
+                onclick="toggleCalendar('departure-calendar', event)">
+              <div id="departure-calendar"
+                class="hidden absolute z-50 top-full left-0 mt-1 w-[300px] rounded-xl border border-gray-200 bg-white p-2 shadow-xl">
+                <calendar-date style="--color-accent: #4f46e5; width: 100%;"
+                  onchange="selectDate('departure-input', 'departure-calendar', event)">
+                  <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                      d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                      d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <calendar-month></calendar-month>
+                </calendar-date>
+              </div>
             </div>
 
-            <div class="flex-1">
-              <label class="label p-0 mb-1 font-bold text-black text-xm"
-                >Comment</label
-              >
-              <textarea
-                class="textarea textarea-bordered textarea-sm w-full h-24 resize-none"
-              ></textarea>
+            <div class="relative date-picker-container">
+              <label class="label p-0 mb-1 text-xs">When to Book</label>
+              <input type="text" id="booking-input" class="input input-bordered input-sm w-full cursor-pointer bg-white"
+                placeholder="Select Date" readonly onclick="toggleCalendar('booking-calendar', event)">
+              <div id="booking-calendar"
+                class="hidden absolute z-50 top-full left-0 mt-1 w-[300px] rounded-xl border border-gray-200 bg-white p-2 shadow-xl">
+                <calendar-date style="--color-accent: #4f46e5; width: 100%;"
+                  onchange="selectDate('booking-input', 'booking-calendar', event)">
+                  <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                      d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                      d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <calendar-month></calendar-month>
+                </calendar-date>
+              </div>
             </div>
 
             <div>
-              <button class="btn btn-primary btn-sm px-6 h-10">
-                Update Requirement
-              </button>
+              <label class="label p-0 mb-1 text-xs">Trip Type</label>
+              <select class="select select-bordered select-sm w-full">
+                <option>Select Trip Type</option>
+                <option>Solo Travel</option>
+                <option>Honeymoon Trip</option>
+                <option>Family Trip</option>
+                <option>Friends</option>
+                <option>Group Query</option>
+                <option>Couple</option>
+                <option>Religious</option>
+                <option>Offbeat</option>
+                <option>Adventure</option>
+                <option>Wild Life</option>
+              </select>
             </div>
+
+            <div>
+              <label class="label p-0 mb-1 text-xs">Is Ticket Booked?</label>
+              <select class="select select-bordered select-sm w-full">
+                <option>Not Booked</option>
+                <option>Booked</option>
+              </select>
+            </div>
+
+            <div class="relative date-picker-container">
+              <label class="label p-0 mb-1 text-xs">Preferred Time To Call</label>
+              <input type="text" id="preferred-input"
+                class="input input-bordered input-sm w-full cursor-pointer bg-white" placeholder="Select Date & Time"
+                readonly onclick="toggleCalendar('preferred-calendar', event)">
+              <div id="preferred-calendar"
+                class="hidden absolute z-50 top-full left-0 mt-1 w-[300px] rounded-xl border border-gray-200 bg-white p-2 shadow-xl">
+                <calendar-date id="pref-cally-date" style="--color-accent: #4f46e5; width: 100%;">
+                  <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                      d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                      d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <calendar-month></calendar-month>
+                </calendar-date>
+
+                <div class="h-px bg-slate-200 my-2"></div>
+
+                <div class="time-set flex items-center gap-2 p-1">
+                  <div class="flex-1">
+                    <label class="text-[10px] uppercase font-bold text-slate-500">Time</label>
+                    <input type="time" id="pref-time-part" class="input input-sm input-bordered w-full" />
+                  </div>
+                  <div class="flex items-end">
+                    <button class="btn btn-sm btn-primary mt-5 text-white" onclick="setDateTime()">Set Time</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <label class="label p-0 mb-1 text-xs">Preferred Way Of Communication</label>
+              <select class="select select-bordered select-sm w-full">
+                <option>Select Communication type</option>
+                <option>Phone</option>
+                <option>Email</option>
+                <option>Whatsapp</option>
+                <option>Meeting</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label p-0 mb-1 text-xs">Preferred Language</label>
+              <select class="select select-bordered select-sm w-full max-h-40 overflow-y-auto">
+                <option>Select Language</option>
+                <option>Assamese</option>
+                <option>Bengali</option>
+                <option>Bodo</option>
+                <option>Dogri</option>
+                <option>Gujarati</option>
+                <option>Hindi</option>
+                <option>Kannada</option>
+                <option>Kashmiri</option>
+                <option>Konkani</option>
+                <option>Maithili</option>
+                <option>Malayalam</option>
+                <option>Manipuri</option>
+                <option>Marathi</option>
+                <option>Nepali</option>
+                <option>Odia</option>
+                <option>Punjabi</option>
+                <option>Sanskrit</option>
+                <option>Santali</option>
+                <option>Sindhi</option>
+                <option>Tamil</option>
+                <option>Telugu</option>
+                <option>Urdu</option>
+                <option>English</option>
+              </select>
+            </div>
+
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
-<script>
-  var picker = new Pikaday({ field: document.getElementById('myDatepicker') });
-    var picker2 = new Pikaday({ field: document.getElementById('myDatepicker2') });
 
-</script>
+    </div>
+
+    <div class="card bg-white shadow-sm">
+      <div class="card-body p-4">
+        <div class="flex gap-4 items-end">
+          <div class="flex-1">
+            <label class="label p-0 mb-1 text-xm text-black font-black">Lead Requirement Note</label>
+            <textarea class="textarea textarea-bordered textarea-sm w-full h-24 resize-none"></textarea>
+          </div>
+          <div class="flex-1">
+            <label class="label p-0 mb-1 font-bold text-black text-xm">Comment</label>
+            <textarea class="textarea textarea-bordered textarea-sm w-full h-24 resize-none"></textarea>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-primary btn-sm px-6 h-10">Update Requirement</button>
+    </div>
+  </div>
+
+  <script>
+    // 1. Toggle visibility of calendars using Tailwind 'hidden' class
+    function toggleCalendar(id, event) {
+      event.stopPropagation();
+
+      // Hide all others
+      document.querySelectorAll('[id$="-calendar"]').forEach(cal => {
+        if (cal.id !== id) cal.classList.add('hidden');
+      });
+
+      // Toggle target
+      const el = document.getElementById(id);
+      el.classList.toggle('hidden');
+    }
+
+    // 2. Simple Date Selection
+    function selectDate(inputId, calendarId, event) {
+      document.getElementById(inputId).value = event.target.value;
+      document.getElementById(calendarId).classList.add('hidden');
+    }
+
+    // 3. Date + Time Selection
+    function setDateTime() {
+      const callyEl = document.getElementById('pref-cally-date');
+      const dateVal = callyEl.value;
+      const timeVal = document.getElementById('pref-time-part').value;
+
+      if (!dateVal) {
+        alert("Please select a date first");
+        return;
+      }
+
+      const finalString = timeVal ? `${dateVal} at ${timeVal}` : dateVal;
+      document.getElementById('preferred-input').value = finalString;
+      document.getElementById('preferred-calendar').classList.add('hidden');
+    }
+
+    // 4. Global Click Listener
+    function handleGlobalClick(event) {
+      if (!event.target.closest('.date-picker-container')) {
+        document.querySelectorAll('[id$="-calendar"]').forEach(cal => {
+          cal.classList.add('hidden');
+        });
+      }
+    }
+  </script>
+</body>
+
+</html>
