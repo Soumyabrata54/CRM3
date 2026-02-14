@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaigns List</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen p-8 font-sans">
+
+    <div class=" mx-auto bg-white shadow-xl rounded-xl border border-gray-200 overflow-hidden">
+
+        <div class="p-6 border-b border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+
+            <div class="w-full md:w-auto">
+                <h1 class="text-2xl font-bold text-gray-800">Campaigns</h1>
+                <p class="text-sm text-gray-500 mt-1">Campaign List in the application</p>
+            </div>
+
+            <div class="w-full md:w-auto flex justify-end">
+                <button
+                    class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white px-6 font-medium capitalize">
+                    Create New Campaign
+                </button>
+            </div>
+        </div>
+
+        <div class="p-0">
+            <div class="overflow-x-auto">
+                <table class="table w-full">
+                    <thead class="bg-gray-100 text-gray-600 font-semibold text-xs uppercase">
+                        <tr>
+                            <th class="py-4 pl-6">Campaign Id</th>
+                            <th>Name</th>
+                            <th>Destinations</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th class="pr-6">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-sm text-gray-700 divide-y divide-gray-100">
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#1</td>
+                            <td class="font-medium">Thailand SEM</td>
+                            <td>Thailand</td>
+                            <td>SEM</td>
+                            <td>Active</td>
+                            <td>21 Jun 2025</td>
+                            <td>31 Dec 2100</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#2</td>
+                            <td class="font-medium">SEO Organic</td>
+                            <td>Thailand</td>
+                            <td>Organic</td>
+                            <td>Active</td>
+                            <td>--</td>
+                            <td>--</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#3</td>
+                            <td class="font-medium">Thailand SMM</td>
+                            <td>Thailand</td>
+                            <td>Facebook</td>
+                            <td>Active</td>
+                            <td>04 Jun 2025</td>
+                            <td>20 Dec 2026</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#6</td>
+                            <td class="font-medium">Bhutan SEM</td>
+                            <td>Bhutan</td>
+                            <td>SEM</td>
+                            <td>Active</td>
+                            <td>17 Jun 2025</td>
+                            <td>--</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#7</td>
+                            <td class="font-medium">Dubai SEM</td>
+                            <td>Dubai</td>
+                            <td>SEM</td>
+                            <td>Active</td>
+                            <td>23 Jul 2025</td>
+                            <td>31 Mar 2027</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#8</td>
+                            <td class="font-medium">Vietnam SEM</td>
+                            <td>Vietnam</td>
+                            <td>SEM</td>
+                            <td>Active</td>
+                            <td>28 Aug 2025</td>
+                            <td>31 Dec 2026</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#9</td>
+                            <td class="font-medium">Bhutan SMM</td>
+                            <td>Bhutan</td>
+                            <td>Facebook</td>
+                            <td>Active</td>
+                            <td>02 Sep 2025</td>
+                            <td>31 Dec 2026</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#12</td>
+                            <td class="font-medium">Thailand WA</td>
+                            <td>Thailand</td>
+                            <td>WhatsApp Campaign</td>
+                            <td>Active</td>
+                            <td>07 Oct 2025</td>
+                            <td>01 Dec 2122</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="pl-6 font-medium text-gray-500">#13</td>
+                            <td class="font-medium">Dubai WA</td>
+                            <td>Dubai</td>
+                            <td>WhatsApp Campaign</td>
+                            <td>Active</td>
+                            <td>07 Oct 2025</td>
+                            <td>31 Oct 2174</td>
+                            <td class="pr-6">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
+                                    <button
+                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
+                                    <button
+                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-between items-center p-4 border-t border-gray-100">
+                <span class="text-xs text-gray-500">Showing 1 to 9 of 15 entries</span>
+                <div class="join">
+                    <button class="join-item btn btn-sm btn-outline">Previous</button>
+                    <button
+                        class="join-item btn btn-sm btn-active bg-indigo-600 text-white border-indigo-600">1</button>
+                    <button class="join-item btn btn-sm btn-outline">Next</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
