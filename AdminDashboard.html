@@ -1,1207 +1,12 @@
 <!doctype html>
 <html lang="en" data-theme="light">
-<<<<<<< HEAD
-  <head>
-=======
 
 <head>
->>>>>>> def4cf5 (Add admin dashboard and campaign view modal)
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRM Admin Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Admin Dashboard</title>
 
-<<<<<<< HEAD
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: { sans: ["Inter", "sans-serif"] },
-            colors: {
-              crm: { 50: "#f8fafc", header: "#f1f5f9" },
-            },
-          },
-        },
-      };
-    </script>
-  </head>
-  <body class="bg-crm-50 text-slate-800 font-sans min-h-screen flex flex-col">
-    <!--Navbar-->
-    <div
-      class="navbar bg-white border-b border-gray-200 sticky top-0 z-[100] h-16 px-6 shadow-sm"
-    >
-      <div class="flex-none">
-        <button class="btn btn-square btn-ghost text-slate-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            class="inline-block w-6 h-6 stroke-current"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <div class="flex-1 px-4">
-        <span class="text-xl font-bold tracking-tight text-slate-800"
-          >Admin<span class="text-blue-600">CRM</span></span
-        >
-      </div>
-      <div class="flex-none gap-4">
-        <div class="hidden md:flex flex-col text-right mr-2">
-          <span class="text-xs text-slate-400">Logged in as</span>
-          <span class="text-sm font-semibold text-slate-700"
-            >Ankush Agarwal</span
-          >
-        </div>
-        <div
-          tabindex="0"
-          role="button"
-          class="btn btn-ghost btn-circle avatar placeholder"
-        >
-          <div class="bg-slate-800 text-white rounded-full w-9">
-            <span class="text-xs">AA</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <main
-      class="flex-1 max-w-[1920px] w-full mx-auto p-4 md:p-8 space-y-8 rounded-lg"
-    >
-      <!--Header-->
-      <div
-        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
-      >
-        <div>
-          <h1 class="text-2xl font-bold text-slate-800">Leads Overview</h1>
-          <p class="text-sm text-slate-500 mt-1">
-            Global sales performance tracking
-          </p>
-        </div>
-        <div class="join shadow-sm border border-gray-200 bg-white rounded-lg">
-          <input
-            class="join-item input input-sm bg-white focus:outline-none w-36 text-sm"
-            type="date"
-            value="2026-02-14"
-          />
-          <span
-            class="join-item btn btn-sm btn-ghost no-animation bg-gray-50 border-x border-gray-200 text-gray-500 font-normal"
-            >to</span
-          >
-          <input
-            class="join-item input input-sm bg-white focus:outline-none w-36 text-sm"
-            type="date"
-            value="2026-02-28"
-          />
-        </div>
-      </div>
-
-      <!--Cards-->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div
-          class="card bg-white border border-slate-100 shadow-sm hover:shadow-orange-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group"
-        >
-          <div class="card-body flex flex-row items-center justify-between p-5">
-            <div>
-              <h2
-                class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-orange-600 transition-colors"
-              >
-                Total Leads
-              </h2>
-              <p class="text-3xl font-bold text-slate-800 mt-1">84</p>
-            </div>
-            <div
-              class="p-3 bg-orange-50 rounded-xl text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="card bg-white border border-slate-100 shadow-sm hover:shadow-amber-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group"
-        >
-          <div class="card-body flex flex-row items-center justify-between p-5">
-            <div>
-              <h2
-                class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-amber-500 transition-colors"
-              >
-                Available
-              </h2>
-              <p class="text-3xl font-bold text-slate-800 mt-1">50</p>
-            </div>
-            <div
-              class="p-3 bg-amber-50 rounded-xl text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="card bg-white border border-slate-100 shadow-sm hover:shadow-emerald-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group"
-        >
-          <div class="card-body flex flex-row items-center justify-between p-5">
-            <div>
-              <h2
-                class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-emerald-600 transition-colors"
-              >
-                Converted
-              </h2>
-              <p class="text-3xl font-bold text-slate-800 mt-1">0</p>
-            </div>
-            <div
-              class="p-3 bg-emerald-50 rounded-xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="card bg-white border border-slate-100 shadow-sm hover:shadow-rose-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group"
-        >
-          <div class="card-body flex flex-row items-center justify-between p-5">
-            <div>
-              <h2
-                class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-rose-600 transition-colors"
-              >
-                Closed
-              </h2>
-              <p class="text-3xl font-bold text-slate-800 mt-1">2</p>
-            </div>
-            <div
-              class="p-3 bg-rose-50 rounded-xl text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--table 1-->
-      <div
-        class="card bg-white shadow-sm border border-gray-200 overflow-hidden"
-      >
-        <div class="bg-white px-6 py-4 border-b border-gray-200">
-          <h3 class="font-bold text-slate-700">Leads Statistics</h3>
-        </div>
-
-        <div
-          class="overflow-x-auto max-h-[500px] [&::-webkit-scrollbar]:h-3 [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 pb-2"
-        >
-          <table class="table table-xs w-full border-separate border-spacing-0">
-            <thead>
-              <tr class="h-10">
-                <th
-                  class="sticky left-0 top-0 z-50 bg-slate-50 border-b border-r border-slate-200 min-w-[160px] text-slate-600 text-xs uppercase font-bold"
-                >
-                  Metric
-                </th>
-
-                <th
-                  colspan="2"
-                  class="sticky top-0 z-40 bg-blue-100/50 text-blue-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  BALI
-                </th>
-                <th
-                  colspan="2"
-                  class="sticky top-0 z-40 bg-emerald-100/50 text-emerald-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  THAILAND
-                </th>
-                <th
-                  colspan="2"
-                  class="sticky top-0 z-40 bg-amber-100/50 text-amber-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  VIETNAM
-                </th>
-                <th
-                  colspan="3"
-                  class="sticky top-0 z-40 bg-violet-100/50 text-violet-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  DUBAI
-                </th>
-                <th
-                  colspan="1"
-                  class="sticky top-0 z-40 bg-rose-100/50 text-rose-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  KASHMIR
-                </th>
-                <th
-                  colspan="1"
-                  class="sticky top-0 z-40 bg-indigo-100/50 text-indigo-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  EUROPE
-                </th>
-                <th
-                  colspan="1"
-                  class="sticky top-0 z-40 bg-cyan-100/50 text-cyan-900 border-b border-white text-center font-bold tracking-wide"
-                >
-                  BHUTAN
-                </th>
-              </tr>
-              <tr class="h-10 text-[10px] text-slate-500">
-                <th
-                  class="sticky left-0 top-10 z-50 bg-slate-50 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                ></th>
-
-                <th
-                  class="sticky top-10 z-30 bg-blue-50 border-b border-r border-slate-200 text-center"
-                >
-                  SEM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-blue-50 border-b border-r-4 border-white text-center"
-                >
-                  SMM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-emerald-50 border-b border-r border-slate-200 text-center"
-                >
-                  SEM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-emerald-50 border-b border-r-4 border-white text-center"
-                >
-                  SMM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-amber-50 border-b border-r border-slate-200 text-center"
-                >
-                  SEM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-amber-50 border-b border-r-4 border-white text-center"
-                >
-                  OTHER
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center"
-                >
-                  SEM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center"
-                >
-                  SMM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-violet-50 border-b border-r-4 border-white text-center"
-                >
-                  OTHER
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-rose-50 border-b border-r-4 border-white text-center"
-                >
-                  OTHER
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-indigo-50 border-b border-r-4 border-white text-center"
-                >
-                  SMM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-cyan-50 border-b border-slate-200 text-center"
-                >
-                  SMM
-                </th>
-              </tr>
-            </thead>
-            <tbody class="text-xs">
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-bold text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  Total Leads
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-700"
-                >
-                  6
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-700"
-                >
-                  8
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-700"
-                >
-                  15
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-700"
-                >
-                  3
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-700"
-                >
-                  23
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-700"
-                >
-                  12
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-700"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-700"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-700"
-                >
-                  0
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-700"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-700"
-                >
-                  10
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-700"
-                >
-                  5
-                </td>
-              </tr>
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  Unassigned Leads
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600 font-medium"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600 font-medium"
-                >
-                  3
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600 font-medium"
-                >
-                  6
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-blue-600 font-medium"
-                >
-                  2
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-blue-600 font-medium"
-                >
-                  14
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-blue-600 font-medium"
-                >
-                  9
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600 font-medium"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600 font-medium"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-blue-600 font-medium"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-blue-600 font-medium"
-                >
-                  9
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-blue-600 font-medium"
-                >
-                  4
-                </td>
-              </tr>
-              <tr class="hover:bg-slate-50 group bg-rose-50/10">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  Closed Leads
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-rose-600 font-bold"
-                >
-                  2
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300"
-                >
-                  -
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!--table 2-->
-      <div
-        class="card bg-white shadow-sm border border-gray-200 overflow-hidden mb-12"
-      >
-        <div class="bg-white px-6 py-4 border-b border-gray-200">
-          <h3 class="font-bold text-slate-700">Leads By Expert</h3>
-        </div>
-
-        <div
-          class="overflow-x-auto max-h-[600px] [&::-webkit-scrollbar]:h-3 [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 pb-2"
-        >
-          <table class="table table-xs w-full border-separate border-spacing-0">
-            <thead>
-              <tr class="h-10">
-                <th
-                  class="sticky left-0 top-0 z-50 bg-slate-50 border-b border-r border-slate-200 min-w-[160px] text-slate-600 text-xs uppercase font-bold"
-                >
-                  Expert Name
-                </th>
-
-                <th
-                  colspan="2"
-                  class="sticky top-0 z-40 bg-blue-100/50 text-blue-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  BALI
-                </th>
-                <th
-                  colspan="2"
-                  class="sticky top-0 z-40 bg-emerald-100/50 text-emerald-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  THAILAND
-                </th>
-                <th
-                  colspan="2"
-                  class="sticky top-0 z-40 bg-amber-100/50 text-amber-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  VIETNAM
-                </th>
-                <th
-                  colspan="3"
-                  class="sticky top-0 z-40 bg-violet-100/50 text-violet-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  DUBAI
-                </th>
-                <th
-                  colspan="1"
-                  class="sticky top-0 z-40 bg-rose-100/50 text-rose-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  KASHMIR
-                </th>
-                <th
-                  colspan="1"
-                  class="sticky top-0 z-40 bg-indigo-100/50 text-indigo-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide"
-                >
-                  EUROPE
-                </th>
-                <th
-                  colspan="1"
-                  class="sticky top-0 z-40 bg-cyan-100/50 text-cyan-900 border-b border-white text-center font-bold tracking-wide"
-                >
-                  BHUTAN
-                </th>
-              </tr>
-              <tr class="h-10 text-[10px] text-slate-500">
-                <th
-                  class="sticky left-0 top-10 z-50 bg-slate-50 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                ></th>
-
-                <th
-                  class="sticky top-10 z-30 bg-blue-50 border-b border-r border-slate-200 text-center"
-                >
-                  SEM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-blue-50 border-b border-r-4 border-white text-center"
-                >
-                  SMM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-emerald-50 border-b border-r border-slate-200 text-center"
-                >
-                  SEM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-emerald-50 border-b border-r-4 border-white text-center"
-                >
-                  SMM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-amber-50 border-b border-r border-slate-200 text-center"
-                >
-                  SEM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-amber-50 border-b border-r-4 border-white text-center"
-                >
-                  OTHER
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center"
-                >
-                  SEM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center"
-                >
-                  SMM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-violet-50 border-b border-r-4 border-white text-center"
-                >
-                  OTHER
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-rose-50 border-b border-r-4 border-white text-center"
-                >
-                  OTHER
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-indigo-50 border-b border-r-4 border-white text-center"
-                >
-                  SMM
-                </th>
-                <th
-                  class="sticky top-10 z-30 bg-cyan-50 border-b border-slate-200 text-center"
-                >
-                  SMM
-                </th>
-              </tr>
-            </thead>
-            <tbody class="text-xs">
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  shrestha
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600"
-                >
-                  2
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300"
-                >
-                  -
-                </td>
-              </tr>
-
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  Megha Nandita sah
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300"
-                >
-                  -
-                </td>
-              </tr>
-
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  Muskan Khawas
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600"
-                >
-                  2
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300"
-                >
-                  -
-                </td>
-              </tr>
-
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  TF Advisor 01
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-blue-600"
-                >
-                  1
-                </td>
-              </tr>
-
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  sangdup tamang
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  2
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300"
-                >
-                  -
-                </td>
-              </tr>
-
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  Simran Thapa
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600"
-                >
-                  1
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300"
-                >
-                  -
-                </td>
-              </tr>
-
-              <tr class="hover:bg-slate-50 group">
-                <td
-                  class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-                >
-                  Priyanki Roy
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600"
-                >
-                  3
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300"
-                >
-                  -
-                </td>
-                <td
-                  class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300"
-                >
-                  -
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-    </main>
-  </body>
-</html>
-=======
+  
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 
@@ -1211,948 +16,923 @@
   <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
    <script type="module" src="https://unpkg.com/cally"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ["Inter", "sans-serif"] },
-                    colors: {
-                        crm: { 50: "#f8fafc", header: "#f1f5f9" },
-                    },
-                },
-            },
-        };
-    </script>
+ 
+
 </head>
 
 <body class="bg-crm-50 text-slate-800 font-sans min-h-screen flex flex-col">
-    <!--Navbar-->
-    <div class="navbar bg-base-100 sticky top-0 z-50  shadow-md ">
 
-        <!-- 🔹 LEFT SIDE -->
-        <div class="flex-1 flex items-center gap-8">
+  <!--Navbar-->
+  <div class="navbar bg-base-100 sticky top-0 z-50  shadow-md ">
 
-            <!-- Mobile Menu -->
-            <div class="dropdown lg:hidden">
-                <label tabindex="0" class="btn btn-ghost btn-circle">
-                    <span class="material-icons">menu</span>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a href="./Dashboard.html">Dashboard</a></li>
-                    <li><a href="./AllLeads.html">All Leads</a></li>
-                    <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
-                    <li><a href="./MyLeads.html">My Leads</a></li>
-                </ul>
-            </div>
+    <!-- 🔹 LEFT SIDE -->
+    <div class="flex-1 flex items-center gap-8">
 
-            <!-- CRM -->
+      <!-- Mobile Menu -->
+      <div class="dropdown lg:hidden">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <span class="material-icons">menu</span>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a href="./Dashboard.html">Dashboard</a></li>
+          <li><a href="./AllLeads.html">All Leads</a></li>
+          <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+          <li><a href="./MyLeads.html">My Leads</a></li>
+        </ul>
+      </div>
 
-            <a class="font-bold  text-2xl">CRM</a>
+      <!-- CRM -->
+
+      <a class="font-bold  text-2xl">CRM</a>
 
 
-            <!-- Desktop Links -->
-            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2">
-                <li class="text-md font-bold"><a href="./Dashboard.html">Dashboard</a></li>
-                <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
-                <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
-                <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
-            </ul>
-
-        </div>
-
-        <!-- 🔹 RIGHT SIDE ICON DROPDOWNS -->
-        <div class="flex-none flex items-center gap-4">
-
-            <!-- 📩 Message Dropdown -->
-            <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
-                    <span class="material-icons">mail</span>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
-                    <li class="menu-title">Messages</li>
-                    <li><a>New lead from Rahul</a></li>
-                    <li><a>Follow-up reminder</a></li>
-                    <li><a>View all messages</a></li>
-                </ul>
-            </div>
-
-            <!-- 🔔 Notification Dropdown -->
-            <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
-                    <span class="material-icons">notifications</span>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
-                    <li class="menu-title">Notifications</li>
-                    <li><a>New Lead Assigned</a></li>
-                    <li><a>Lead Status Updated</a></li>
-                    <li><a>System Alert</a></li>
-                </ul>
-            </div>
-
-            <!-- 👤 User Dropdown -->
-            <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                    <span class="material-icons">account_circle</span>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li class="menu-title">Soumyabrata</li>
-                    <li><a>Profile</a></li>
-                    <li><a>Settings</a></li>
-                    <li><a class="text-error">Logout</a></li>
-                </ul>
-            </div>
-
-        </div>
+      <!-- Desktop Links -->
+      <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2">
+        <li class="text-md font-bold"><a href="./Dashboard.html">Dashboard</a></li>
+        <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
+        <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+        <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+      </ul>
 
     </div>
 
+    <!-- 🔹 RIGHT SIDE ICON DROPDOWNS -->
+    <div class="flex-none flex items-center gap-4">
 
-    <main class="flex-1 max-w-[1920px] w-full mx-auto p-4 md:p-8 space-y-8 rounded-lg">
-        <!--Header-->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div>
-                <h1 class="text-2xl font-bold text-slate-800">Leads Overview</h1>
-                <p class="text-sm text-slate-500 mt-1">
-                    Global sales performance tracking
-                </p>
-            </div>
-            <div class="join shadow-sm border border-gray-200 bg-white rounded-lg">
-                <input class="join-item input input-sm bg-white focus:outline-none w-36 text-sm" type="date"
-                    value="2026-02-14" />
-                <span
-                    class="join-item btn btn-sm btn-ghost no-animation bg-gray-50 border-x border-gray-200 text-gray-500 font-normal">to</span>
-                <input class="join-item input input-sm bg-white focus:outline-none w-36 text-sm" type="date"
-                    value="2026-02-28" />
-            </div>
+      <!-- 📩 Message Dropdown -->
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+          <span class="material-icons">mail</span>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+          <li class="menu-title">Messages</li>
+          <li><a>New lead from Rahul</a></li>
+          <li><a>Follow-up reminder</a></li>
+          <li><a>View all messages</a></li>
+        </ul>
+      </div>
+
+      <!-- 🔔 Notification Dropdown -->
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+          <span class="material-icons">notifications</span>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+          <li class="menu-title">Notifications</li>
+          <li><a>New Lead Assigned</a></li>
+          <li><a>Lead Status Updated</a></li>
+          <li><a>System Alert</a></li>
+        </ul>
+      </div>
+
+      <!-- 👤 User Dropdown -->
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <span class="material-icons">account_circle</span>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li class="menu-title">Soumyabrata</li>
+          <li><a>Profile</a></li>
+          <li><a>Settings</a></li>
+          <li><a class="text-error">Logout</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <main class="flex-1 max-w-[1920px] w-full mx-auto p-4 md:p-8 space-y-8 rounded-lg">
+    <!--Header-->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <h1 class="text-2xl font-bold text-slate-800">Leads Overview</h1>
+        <p class="text-sm text-slate-500 mt-1">
+          Global sales performance tracking
+        </p>
+      </div>
+      <div class="join shadow-sm border border-gray-200 bg-white rounded-lg">
+        <input class="join-item input input-sm bg-white focus:outline-none w-36 text-sm" type="date"
+          value="2026-02-14" />
+        <span
+          class="join-item btn btn-sm btn-ghost no-animation bg-gray-50 border-x border-gray-200 text-gray-500 font-normal">to</span>
+        <input class="join-item input input-sm bg-white focus:outline-none w-36 text-sm" type="date"
+          value="2026-02-28" />
+      </div>
+    </div>
+
+    <!--Cards-->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div
+        class="card bg-white border border-slate-100 shadow-sm hover:shadow-orange-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group">
+        <div class="card-body flex flex-row items-center justify-between p-5">
+          <div>
+            <h2
+              class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-orange-600 transition-colors">
+              Total Leads
+            </h2>
+            <p class="text-3xl font-bold text-slate-800 mt-1">84</p>
+          </div>
+          <div
+            class="p-3 bg-orange-50 rounded-xl text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+          </div>
         </div>
+      </div>
 
-        <!--Cards-->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div
-                class="card bg-white border border-slate-100 shadow-sm hover:shadow-orange-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group">
-                <div class="card-body flex flex-row items-center justify-between p-5">
-                    <div>
-                        <h2
-                            class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-orange-600 transition-colors">
-                            Total Leads
-                        </h2>
-                        <p class="text-3xl font-bold text-slate-800 mt-1">84</p>
-                    </div>
-                    <div
-                        class="p-3 bg-orange-50 rounded-xl text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="card bg-white border border-slate-100 shadow-sm hover:shadow-amber-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group">
-                <div class="card-body flex flex-row items-center justify-between p-5">
-                    <div>
-                        <h2
-                            class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-amber-500 transition-colors">
-                            Available
-                        </h2>
-                        <p class="text-3xl font-bold text-slate-800 mt-1">50</p>
-                    </div>
-                    <div
-                        class="p-3 bg-amber-50 rounded-xl text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="card bg-white border border-slate-100 shadow-sm hover:shadow-emerald-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group">
-                <div class="card-body flex flex-row items-center justify-between p-5">
-                    <div>
-                        <h2
-                            class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-emerald-600 transition-colors">
-                            Converted
-                        </h2>
-                        <p class="text-3xl font-bold text-slate-800 mt-1">0</p>
-                    </div>
-                    <div
-                        class="p-3 bg-emerald-50 rounded-xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="card bg-white border border-slate-100 shadow-sm hover:shadow-rose-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group">
-                <div class="card-body flex flex-row items-center justify-between p-5">
-                    <div>
-                        <h2
-                            class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-rose-600 transition-colors">
-                            Closed
-                        </h2>
-                        <p class="text-3xl font-bold text-slate-800 mt-1">2</p>
-                    </div>
-                    <div
-                        class="p-3 bg-rose-50 rounded-xl text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
+      <div
+        class="card bg-white border border-slate-100 shadow-sm hover:shadow-amber-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group">
+        <div class="card-body flex flex-row items-center justify-between p-5">
+          <div>
+            <h2
+              class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-amber-500 transition-colors">
+              Available
+            </h2>
+            <p class="text-3xl font-bold text-slate-800 mt-1">50</p>
+          </div>
+          <div
+            class="p-3 bg-amber-50 rounded-xl text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
         </div>
+      </div>
 
-        <!--table 1-->
-        <div class="card bg-white shadow-sm border border-gray-200 overflow-hidden">
-            <div class="bg-white px-6 py-4 border-b border-gray-200">
-                <h3 class="font-bold text-slate-700">Leads Statistics</h3>
-            </div>
-
-            <div
-                class="overflow-x-auto max-h-[500px] [&::-webkit-scrollbar]:h-3 [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 pb-2">
-                <table class="table table-xs w-full border-separate border-spacing-0">
-                    <thead>
-                        <tr class="h-10">
-                            <th
-                                class="sticky left-0 top-0 z-50 bg-slate-50 border-b border-r border-slate-200 min-w-[160px] text-slate-600 text-xs uppercase font-bold">
-                                Metric
-                            </th>
-
-                            <th colspan="2"
-                                class="sticky top-0 z-40 bg-blue-100/50 text-blue-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                BALI
-                            </th>
-                            <th colspan="2"
-                                class="sticky top-0 z-40 bg-emerald-100/50 text-emerald-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                THAILAND
-                            </th>
-                            <th colspan="2"
-                                class="sticky top-0 z-40 bg-amber-100/50 text-amber-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                VIETNAM
-                            </th>
-                            <th colspan="3"
-                                class="sticky top-0 z-40 bg-violet-100/50 text-violet-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                DUBAI
-                            </th>
-                            <th colspan="1"
-                                class="sticky top-0 z-40 bg-rose-100/50 text-rose-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                KASHMIR
-                            </th>
-                            <th colspan="1"
-                                class="sticky top-0 z-40 bg-indigo-100/50 text-indigo-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                EUROPE
-                            </th>
-                            <th colspan="1"
-                                class="sticky top-0 z-40 bg-cyan-100/50 text-cyan-900 border-b border-white text-center font-bold tracking-wide">
-                                BHUTAN
-                            </th>
-                        </tr>
-                        <tr class="h-10 text-[10px] text-slate-500">
-                            <th
-                                class="sticky left-0 top-10 z-50 bg-slate-50 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                            </th>
-
-                            <th class="sticky top-10 z-30 bg-blue-50 border-b border-r border-slate-200 text-center">
-                                SEM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-blue-50 border-b border-r-4 border-white text-center">
-                                SMM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-emerald-50 border-b border-r border-slate-200 text-center">
-                                SEM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-emerald-50 border-b border-r-4 border-white text-center">
-                                SMM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-amber-50 border-b border-r border-slate-200 text-center">
-                                SEM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-amber-50 border-b border-r-4 border-white text-center">
-                                OTHER
-                            </th>
-                            <th class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center">
-                                SEM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center">
-                                SMM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-violet-50 border-b border-r-4 border-white text-center">
-                                OTHER
-                            </th>
-                            <th class="sticky top-10 z-30 bg-rose-50 border-b border-r-4 border-white text-center">
-                                OTHER
-                            </th>
-                            <th class="sticky top-10 z-30 bg-indigo-50 border-b border-r-4 border-white text-center">
-                                SMM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-cyan-50 border-b border-slate-200 text-center">
-                                SMM
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-xs">
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-bold text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                Total Leads
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-700">
-                                6
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-700">
-                                8
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-700">
-                                15
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-700">
-                                3
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-700">
-                                23
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-700">
-                                12
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-700">
-                                1
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-700">
-                                1
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-700">
-                                0
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-700">
-                                1
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-700">
-                                10
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-700">
-                                5
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                Unassigned Leads
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600 font-medium">
-                                1
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600 font-medium">
-                                3
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600 font-medium">
-                                6
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-blue-600 font-medium">
-                                2
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-blue-600 font-medium">
-                                14
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-blue-600 font-medium">
-                                9
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600 font-medium">
-                                1
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600 font-medium">
-                                1
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-blue-600 font-medium">
-                                1
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-blue-600 font-medium">
-                                9
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-blue-600 font-medium">
-                                4
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 group bg-rose-50/10">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                Closed Leads
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-rose-600 font-bold">
-                                2
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
-                                -
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+      <div
+        class="card bg-white border border-slate-100 shadow-sm hover:shadow-emerald-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group">
+        <div class="card-body flex flex-row items-center justify-between p-5">
+          <div>
+            <h2
+              class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-emerald-600 transition-colors">
+              Converted
+            </h2>
+            <p class="text-3xl font-bold text-slate-800 mt-1">0</p>
+          </div>
+          <div
+            class="p-3 bg-emerald-50 rounded-xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
         </div>
+      </div>
 
-        <!--table 2-->
-        <div class="card bg-white shadow-sm border border-gray-200 overflow-hidden mb-12">
-            <div class="bg-white px-6 py-4 border-b border-gray-200">
-                <h3 class="font-bold text-slate-700">Leads By Expert</h3>
-            </div>
-
-            <div
-                class="overflow-x-auto max-h-[600px] [&::-webkit-scrollbar]:h-3 [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 pb-2">
-                <table class="table table-xs w-full border-separate border-spacing-0">
-                    <thead>
-                        <tr class="h-10">
-                            <th
-                                class="sticky left-0 top-0 z-50 bg-slate-50 border-b border-r border-slate-200 min-w-[160px] text-slate-600 text-xs uppercase font-bold">
-                                Expert Name
-                            </th>
-
-                            <th colspan="2"
-                                class="sticky top-0 z-40 bg-blue-100/50 text-blue-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                BALI
-                            </th>
-                            <th colspan="2"
-                                class="sticky top-0 z-40 bg-emerald-100/50 text-emerald-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                THAILAND
-                            </th>
-                            <th colspan="2"
-                                class="sticky top-0 z-40 bg-amber-100/50 text-amber-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                VIETNAM
-                            </th>
-                            <th colspan="3"
-                                class="sticky top-0 z-40 bg-violet-100/50 text-violet-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                DUBAI
-                            </th>
-                            <th colspan="1"
-                                class="sticky top-0 z-40 bg-rose-100/50 text-rose-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                KASHMIR
-                            </th>
-                            <th colspan="1"
-                                class="sticky top-0 z-40 bg-indigo-100/50 text-indigo-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
-                                EUROPE
-                            </th>
-                            <th colspan="1"
-                                class="sticky top-0 z-40 bg-cyan-100/50 text-cyan-900 border-b border-white text-center font-bold tracking-wide">
-                                BHUTAN
-                            </th>
-                        </tr>
-                        <tr class="h-10 text-[10px] text-slate-500">
-                            <th
-                                class="sticky left-0 top-10 z-50 bg-slate-50 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                            </th>
-
-                            <th class="sticky top-10 z-30 bg-blue-50 border-b border-r border-slate-200 text-center">
-                                SEM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-blue-50 border-b border-r-4 border-white text-center">
-                                SMM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-emerald-50 border-b border-r border-slate-200 text-center">
-                                SEM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-emerald-50 border-b border-r-4 border-white text-center">
-                                SMM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-amber-50 border-b border-r border-slate-200 text-center">
-                                SEM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-amber-50 border-b border-r-4 border-white text-center">
-                                OTHER
-                            </th>
-                            <th class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center">
-                                SEM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center">
-                                SMM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-violet-50 border-b border-r-4 border-white text-center">
-                                OTHER
-                            </th>
-                            <th class="sticky top-10 z-30 bg-rose-50 border-b border-r-4 border-white text-center">
-                                OTHER
-                            </th>
-                            <th class="sticky top-10 z-30 bg-indigo-50 border-b border-r-4 border-white text-center">
-                                SMM
-                            </th>
-                            <th class="sticky top-10 z-30 bg-cyan-50 border-b border-slate-200 text-center">
-                                SMM
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-xs">
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                shrestha
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600">
-                                2
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
-                                -
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                Megha Nandita sah
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600">
-                                1
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
-                                -
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                Muskan Khawas
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600">
-                                1
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600">
-                                2
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
-                                -
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                TF Advisor 01
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600">
-                                1
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600">
-                                1
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600">
-                                1
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-blue-600">
-                                1
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                sangdup tamang
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
-                                2
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
-                                -
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                Simran Thapa
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600">
-                                1
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
-                                -
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-slate-50 group">
-                            <td
-                                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
-                                Priyanki Roy
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600">
-                                3
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
-                                -
-                            </td>
-                            <td
-                                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
-                                -
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+      <div
+        class="card bg-white border border-slate-100 shadow-sm hover:shadow-rose-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer group">
+        <div class="card-body flex flex-row items-center justify-between p-5">
+          <div>
+            <h2
+              class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-rose-600 transition-colors">
+              Closed
+            </h2>
+            <p class="text-3xl font-bold text-slate-800 mt-1">2</p>
+          </div>
+          <div
+            class="p-3 bg-rose-50 rounded-xl text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+            </svg>
+          </div>
         </div>
+      </div>
+    </div>
 
-    </main>
+    <!--table 1-->
+    <div class="card bg-white shadow-sm border border-gray-200 overflow-hidden">
+      <div class="bg-white px-6 py-4 border-b border-gray-200">
+        <h3 class="font-bold text-slate-700">Leads Statistics</h3>
+      </div>
+
+      <div
+        class="overflow-x-auto max-h-[500px] [&::-webkit-scrollbar]:h-3 [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 pb-2">
+        <table class="table table-xs w-full border-separate border-spacing-0">
+          <thead>
+            <tr class="h-10">
+              <th
+                class="sticky left-0 top-0 z-50 bg-slate-50 border-b border-r border-slate-200 min-w-[160px] text-slate-600 text-xs uppercase font-bold">
+                Metric
+              </th>
+
+              <th colspan="2"
+                class="sticky top-0 z-40 bg-blue-100/50 text-blue-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                BALI
+              </th>
+              <th colspan="2"
+                class="sticky top-0 z-40 bg-emerald-100/50 text-emerald-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                THAILAND
+              </th>
+              <th colspan="2"
+                class="sticky top-0 z-40 bg-amber-100/50 text-amber-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                VIETNAM
+              </th>
+              <th colspan="3"
+                class="sticky top-0 z-40 bg-violet-100/50 text-violet-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                DUBAI
+              </th>
+              <th colspan="1"
+                class="sticky top-0 z-40 bg-rose-100/50 text-rose-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                KASHMIR
+              </th>
+              <th colspan="1"
+                class="sticky top-0 z-40 bg-indigo-100/50 text-indigo-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                EUROPE
+              </th>
+              <th colspan="1"
+                class="sticky top-0 z-40 bg-cyan-100/50 text-cyan-900 border-b border-white text-center font-bold tracking-wide">
+                BHUTAN
+              </th>
+            </tr>
+            <tr class="h-10 text-[10px] text-slate-500">
+              <th
+                class="sticky left-0 top-10 z-50 bg-slate-50 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+              </th>
+
+              <th class="sticky top-10 z-30 bg-blue-50 border-b border-r border-slate-200 text-center">
+                SEM
+              </th>
+              <th class="sticky top-10 z-30 bg-blue-50 border-b border-r-4 border-white text-center">
+                SMM
+              </th>
+              <th class="sticky top-10 z-30 bg-emerald-50 border-b border-r border-slate-200 text-center">
+                SEM
+              </th>
+              <th class="sticky top-10 z-30 bg-emerald-50 border-b border-r-4 border-white text-center">
+                SMM
+              </th>
+              <th class="sticky top-10 z-30 bg-amber-50 border-b border-r border-slate-200 text-center">
+                SEM
+              </th>
+              <th class="sticky top-10 z-30 bg-amber-50 border-b border-r-4 border-white text-center">
+                OTHER
+              </th>
+              <th class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center">
+                SEM
+              </th>
+              <th class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center">
+                SMM
+              </th>
+              <th class="sticky top-10 z-30 bg-violet-50 border-b border-r-4 border-white text-center">
+                OTHER
+              </th>
+              <th class="sticky top-10 z-30 bg-rose-50 border-b border-r-4 border-white text-center">
+                OTHER
+              </th>
+              <th class="sticky top-10 z-30 bg-indigo-50 border-b border-r-4 border-white text-center">
+                SMM
+              </th>
+              <th class="sticky top-10 z-30 bg-cyan-50 border-b border-slate-200 text-center">
+                SMM
+              </th>
+            </tr>
+          </thead>
+          <tbody class="text-xs">
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-bold text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                Total Leads
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-700">
+                6
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-700">
+                8
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-700">
+                15
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-700">
+                3
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-700">
+                23
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-700">
+                12
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-700">
+                1
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-700">
+                1
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-700">
+                0
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-700">
+                1
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-700">
+                10
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-700">
+                5
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                Unassigned Leads
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600 font-medium">
+                1
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600 font-medium">
+                3
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600 font-medium">
+                6
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-blue-600 font-medium">
+                2
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-blue-600 font-medium">
+                14
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-blue-600 font-medium">
+                9
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600 font-medium">
+                1
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600 font-medium">
+                1
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-blue-600 font-medium">
+                1
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-blue-600 font-medium">
+                9
+              </td>
+              <td
+                class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-blue-600 font-medium">
+                4
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 group bg-rose-50/10">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                Closed Leads
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-rose-600 font-bold">
+                2
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
+                -
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
+                -
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!--table 2-->
+    <div class="card bg-white shadow-sm border border-gray-200 overflow-hidden mb-12">
+      <div class="bg-white px-6 py-4 border-b border-gray-200">
+        <h3 class="font-bold text-slate-700">Leads By Expert</h3>
+      </div>
+
+      <div
+        class="overflow-x-auto max-h-[600px] [&::-webkit-scrollbar]:h-3 [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 pb-2">
+        <table class="table table-xs w-full border-separate border-spacing-0">
+          <thead>
+            <tr class="h-10">
+              <th
+                class="sticky left-0 top-0 z-50 bg-slate-50 border-b border-r border-slate-200 min-w-[160px] text-slate-600 text-xs uppercase font-bold">
+                Expert Name
+              </th>
+
+              <th colspan="2"
+                class="sticky top-0 z-40 bg-blue-100/50 text-blue-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                BALI
+              </th>
+              <th colspan="2"
+                class="sticky top-0 z-40 bg-emerald-100/50 text-emerald-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                THAILAND
+              </th>
+              <th colspan="2"
+                class="sticky top-0 z-40 bg-amber-100/50 text-amber-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                VIETNAM
+              </th>
+              <th colspan="3"
+                class="sticky top-0 z-40 bg-violet-100/50 text-violet-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                DUBAI
+              </th>
+              <th colspan="1"
+                class="sticky top-0 z-40 bg-rose-100/50 text-rose-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                KASHMIR
+              </th>
+              <th colspan="1"
+                class="sticky top-0 z-40 bg-indigo-100/50 text-indigo-900 border-b border-white border-r-4 border-white text-center font-bold tracking-wide">
+                EUROPE
+              </th>
+              <th colspan="1"
+                class="sticky top-0 z-40 bg-cyan-100/50 text-cyan-900 border-b border-white text-center font-bold tracking-wide">
+                BHUTAN
+              </th>
+            </tr>
+            <tr class="h-10 text-[10px] text-slate-500">
+              <th
+                class="sticky left-0 top-10 z-50 bg-slate-50 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+              </th>
+
+              <th class="sticky top-10 z-30 bg-blue-50 border-b border-r border-slate-200 text-center">
+                SEM
+              </th>
+              <th class="sticky top-10 z-30 bg-blue-50 border-b border-r-4 border-white text-center">
+                SMM
+              </th>
+              <th class="sticky top-10 z-30 bg-emerald-50 border-b border-r border-slate-200 text-center">
+                SEM
+              </th>
+              <th class="sticky top-10 z-30 bg-emerald-50 border-b border-r-4 border-white text-center">
+                SMM
+              </th>
+              <th class="sticky top-10 z-30 bg-amber-50 border-b border-r border-slate-200 text-center">
+                SEM
+              </th>
+              <th class="sticky top-10 z-30 bg-amber-50 border-b border-r-4 border-white text-center">
+                OTHER
+              </th>
+              <th class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center">
+                SEM
+              </th>
+              <th class="sticky top-10 z-30 bg-violet-50 border-b border-r border-slate-200 text-center">
+                SMM
+              </th>
+              <th class="sticky top-10 z-30 bg-violet-50 border-b border-r-4 border-white text-center">
+                OTHER
+              </th>
+              <th class="sticky top-10 z-30 bg-rose-50 border-b border-r-4 border-white text-center">
+                OTHER
+              </th>
+              <th class="sticky top-10 z-30 bg-indigo-50 border-b border-r-4 border-white text-center">
+                SMM
+              </th>
+              <th class="sticky top-10 z-30 bg-cyan-50 border-b border-slate-200 text-center">
+                SMM
+              </th>
+            </tr>
+          </thead>
+          <tbody class="text-xs">
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                shrestha
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600">
+                2
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
+                -
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
+                -
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                Megha Nandita sah
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600">
+                1
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
+                -
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
+                -
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                Muskan Khawas
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600">
+                1
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600">
+                2
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
+                -
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
+                -
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                TF Advisor 01
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-blue-600">
+                1
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600">
+                1
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-blue-600">
+                1
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
+                -
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-blue-600">
+                1
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                sangdup tamang
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
+                2
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
+                -
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
+                -
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                Simran Thapa
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-blue-600">
+                1
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
+                -
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
+                -
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 group">
+              <td
+                class="sticky left-0 z-20 bg-white font-medium text-slate-700 border-b border-r border-slate-200 shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                Priyanki Roy
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r border-slate-100 group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-blue-50/20 text-center border-b border-r-4 border-white group-hover:bg-blue-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r border-slate-100 group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-emerald-50/20 text-center border-b border-r-4 border-white group-hover:bg-emerald-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r border-slate-100 group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-amber-50/20 text-center border-b border-r-4 border-white group-hover:bg-amber-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-blue-600">
+                3
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r border-slate-100 group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-violet-50/20 text-center border-b border-r-4 border-white group-hover:bg-violet-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-rose-50/20 text-center border-b border-r-4 border-white group-hover:bg-rose-100/50 text-slate-300">
+                -
+              </td>
+              <td
+                class="bg-indigo-50/20 text-center border-b border-r-4 border-white group-hover:bg-indigo-100/50 text-slate-300">
+                -
+              </td>
+              <td class="bg-cyan-50/20 text-center border-b border-slate-100 group-hover:bg-cyan-100/50 text-slate-300">
+                -
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
 </body>
 
 </html>
->>>>>>> def4cf5 (Add admin dashboard and campaign view modal)
