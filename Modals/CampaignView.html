@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM - All Leads</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+
+</head>
+
+<body>
+    <dialog id="view_modal" class="modal">
+        <div class="modal-box max-w-md">
+            <h3 class="font-bold text-lg mb-4 text-primary">Campaign Details</h3>
+            <div class="card bg-base-200 shadow-inner p-4">
+                <div class="grid grid-cols-2 gap-y-3">
+                    <span class="text-sm opacity-70">Campaign ID:</span>
+                    <span class="font-semibold">#1</span>
+
+                    <span class="text-sm opacity-70">Name:</span>
+                    <span class="font-semibold">Thailand SEM</span>
+
+                    <span class="text-sm opacity-70">Destination:</span>
+                    <span class="font-semibold">Thailand</span>
+
+                    <span class="text-sm opacity-70">Type:</span>
+                    <div class="badge badge-outline">SEM</div>
+
+                    <span class="text-sm opacity-70">Status:</span>
+                    <div class="badge badge-success gap-2 text-white">Active</div>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+</body>
