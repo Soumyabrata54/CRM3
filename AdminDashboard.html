@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CRM Admin Dashboard</title>
 
-  
+
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 
@@ -14,9 +14,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-   <script type="module" src="https://unpkg.com/cally"></script>
+  <script type="module" src="https://unpkg.com/cally"></script>
 
- 
+
 
 </head>
 
@@ -111,14 +111,88 @@
           Global sales performance tracking
         </p>
       </div>
-      <div class="join shadow-sm border border-gray-200 bg-white rounded-lg">
-        <input class="join-item input input-sm bg-white focus:outline-none w-36 text-sm" type="date"
-          value="2026-02-14" />
-        <span
-          class="join-item btn btn-sm btn-ghost no-animation bg-gray-50 border-x border-gray-200 text-gray-500 font-normal">to</span>
-        <input class="join-item input input-sm bg-white focus:outline-none w-36 text-sm" type="date"
-          value="2026-02-28" />
+
+      <!--Cally Range Date-->
+      <div class="relative inline-block group-date-picker">
+
+        <div
+          class="join shadow-sm border border-gray-200 bg-white rounded-lg cursor-pointer hover:border-indigo-300 transition-colors"
+          onclick="document.getElementById('rangeCalendar').classList.toggle('hidden')">
+          <input id="rangeStart"
+            class="join-item input input-sm bg-white focus:outline-none w-32 text-sm cursor-pointer pointer-events-none"
+            readonly value="2026-02-14" />
+          <span
+            class="join-item btn btn-sm btn-ghost no-animation bg-gray-50 border-x border-gray-200 text-gray-400 font-normal pointer-events-none">to</span>
+          <input id="rangeEnd"
+            class="join-item input input-sm bg-white focus:outline-none w-32 text-sm cursor-pointer pointer-events-none"
+            readonly value="2026-02-28" />
+        </div>
+
+        <div id="rangeCalendar"
+          class="absolute top-12 right-0 z-[100] shadow-2xl border border-gray-200 rounded-xl hidden bg-white p-4 w-[600px] max-md:w-[320px] max-md:fixed max-md:top-20 max-md:left-4 max-md:right-4">
+
+          <calendar-range months="2" class="[--cally-color-accent:#6366f1] text-gray-700 w-full" id="callyRange">
+
+            <div slot="header" class="flex items-center justify-between mb-4">
+              <button type="button" slot="previous"
+                class="btn btn-xs btn-outline btn-circle border-gray-300 hover:bg-gray-100">
+                <svg class="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>
+              </button>
+
+              <button type="button" slot="next"
+                class="btn btn-xs btn-outline btn-circle border-gray-300 hover:bg-gray-100">
+                <svg class="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex flex-wrap gap-8 justify-center">
+              <calendar-month></calendar-month>
+              <calendar-month offset="1" class="max-md:hidden"></calendar-month>
+            </div>
+          </calendar-range>
+        </div>
       </div>
+
+      <script>
+        // Select the cally component
+        const picker = document.getElementById('callyRange');
+
+        // Listen for changes
+        picker.addEventListener('change', (e) => {
+          // Cally range value is: "YYYY-MM-DD/YYYY-MM-DD"
+          const value = e.target.value;
+
+          if (value.includes('/')) {
+            const [start, end] = value.split('/');
+
+            if (start) document.getElementById('rangeStart').value = start;
+            if (end) {
+              document.getElementById('rangeEnd').value = end;
+              // Close calendar automatically after range is complete
+              document.getElementById('rangeCalendar').classList.add('hidden');
+            }
+          } else {
+            // If only start date is picked
+            document.getElementById('rangeStart').value = value;
+            document.getElementById('rangeEnd').value = "";
+          }
+        });
+
+        // Handle clicking outside to close
+        document.addEventListener('click', (event) => {
+          const container = document.querySelector('.group-date-picker');
+          const calendar = document.getElementById('rangeCalendar');
+
+          if (!container.contains(event.target)) {
+            calendar.classList.add('hidden');
+          }
+        });
+      </script>
     </div>
 
     <!--Cards-->
