@@ -13,12 +13,9 @@
 <body class="bg-gray-50 min-h-screen  font-sans">
 
     <!--Navbar-->
-    <div class="navbar bg-base-100 sticky top-0 z-50  shadow-md ">
+    <div class="navbar bg-base-100 sticky top-0 z-40 shadow-sm border-b border-slate-200">
+        <div class="flex-1 flex items-center gap-4 lg:gap-8">
 
-        <!-- 🔹 LEFT SIDE -->
-        <div class="flex-1 flex items-center gap-8">
-
-            <!-- Mobile Menu -->
             <div class="dropdown lg:hidden">
                 <label tabindex="0" class="btn btn-ghost btn-circle">
                     <span class="material-icons">menu</span>
@@ -26,31 +23,46 @@
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     <li><a href="./Dashboard.html">Dashboard</a></li>
+                    <li><a href="./AdminDashboard.html">AdminDashboard</a></li>
                     <li><a href="./AllLeads.html">All Leads</a></li>
                     <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
                     <li><a href="./MyLeads.html">My Leads</a></li>
+                    <li>
+                        <details>
+                            <summary>Settings</summary>
+                            <ul>
+                                <li><a href="./Destinations.html">Destinations</a></li>
+                                <li><a href="./Users.html">Users</a></li>
+                            </ul>
+                        </details>
+                    </li>
                 </ul>
             </div>
 
-            <!-- CRM -->
+            <a class="font-bold text-2xl">CRM</a>
 
-            <a class="font-bold  text-2xl">CRM</a>
-
-
-            <!-- Desktop Links -->
-            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2">
+            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2 items-center">
                 <li class="text-md font-bold"><a href="./Dashboard.html">Dashboard</a></li>
+                <li class="text-md font-bold"><a href="./AdminDashboard.html">AdminDashboard</a></li>
                 <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
                 <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
                 <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+                <li class="dropdown dropdown-end">
+                    <div tabindex="0" role="button"
+                        class="text-md font-bold active:bg-neutral-focus flex items-center gap-1">
+                        Settings
+                        <span class="material-icons text-sm opacity-50">expand_more</span>
+                    </div>
+                    <ul tabindex="0"
+                        class="dropdown-content menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow-lg mt-4">
+                        <li><a href="./Destinations.html">Destinations</a></li>
+                        <li><a href="./Users.html">Users</a></li>
+                    </ul>
+                </li>
             </ul>
-
         </div>
 
-        <!-- 🔹 RIGHT SIDE ICON DROPDOWNS -->
-        <div class="flex-none flex items-center gap-4">
-
-            <!-- 📩 Message Dropdown -->
+        <div class="flex-none flex items-center gap-2 lg:gap-4">
             <div class="dropdown dropdown-end">
                 <label tabindex="0" class="btn btn-ghost btn-circle indicator">
                     <span class="material-icons">mail</span>
@@ -64,7 +76,6 @@
                 </ul>
             </div>
 
-            <!-- 🔔 Notification Dropdown -->
             <div class="dropdown dropdown-end">
                 <label tabindex="0" class="btn btn-ghost btn-circle indicator">
                     <span class="material-icons">notifications</span>
@@ -78,7 +89,6 @@
                 </ul>
             </div>
 
-            <!-- 👤 User Dropdown -->
             <div class="dropdown dropdown-end">
                 <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                     <span class="material-icons">account_circle</span>
@@ -91,9 +101,7 @@
                     <li><a class="text-error">Logout</a></li>
                 </ul>
             </div>
-
         </div>
-
     </div>
 
     <!--Main Body-->
@@ -208,7 +216,8 @@
                             <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
                             <td>04-06-2025 09:44:54</td>
                             <td class="pr-6">
-                                <button class="btn btn-xs text-blue-600 border-none text-xm" onclick="edit_modal_thailand.showModal()">Edit</button>
+                                <button class="btn btn-xs text-blue-600 border-none text-xm"
+                                    onclick="edit_modal_thailand.showModal()">Edit</button>
                                 <dialog id="edit_modal_thailand" class="modal">
                                     <div class="modal-box">
                                         <h3 class="font-bold text-lg mb-6 flex items-center gap-2">
@@ -353,7 +362,7 @@
                                     class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
                         </tr>
 
-                        
+
 
 
 

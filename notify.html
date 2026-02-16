@@ -53,86 +53,90 @@
 <body class="bg-base-200 min-h-screen  ">
 
     <!--Navbar-->
-    <div class="navbar bg-base-100 sticky top-0 z-50  shadow-md ">
+  <div class="navbar bg-base-100 sticky top-0 z-40 shadow-sm border-b border-slate-200">
+    <div class="flex-1 flex items-center gap-4 lg:gap-8">
 
-        <!-- 🔹 LEFT SIDE -->
-        <div class="flex-1 flex items-center gap-8">
+      <div class="dropdown lg:hidden">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <span class="material-icons">menu</span>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a href="./Dashboard.html">Dashboard</a></li>
+          <li><a href="./AdminDashboard.html">AdminDashboard</a></li>
+          <li><a href="./AllLeads.html">All Leads</a></li>
+          <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+          <li><a href="./MyLeads.html">My Leads</a></li>
+          <li>
+            <details>
+              <summary>Settings</summary>
+              <ul>
+                <li><a href="./Destinations.html">Destinations</a></li>
+                <li><a href="./Users.html">Users</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
 
-            <!-- Mobile Menu -->
-            <div class="dropdown lg:hidden">
-                <label tabindex="0" class="btn btn-ghost btn-circle">
-                    <span class="material-icons">menu</span>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Dashboard</a></li>
-                    <li><a href="../AllLeads.html">All Leads</a></li>
-                    <li><a>Follow Up Leads</a></li>
-                    <li><a>My Leads</a></li>
-                </ul>
-            </div>
+      <a class="font-bold text-2xl">CRM</a>
 
-            <!-- CRM -->
-            <a class="font-bold text-2xl">CRM</a>
-
-            <!-- Desktop Links -->
-            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2">
-                <li class="text-md font-bold"><a>Dashboard</a></li>
-                <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
-                <li class="text-md font-bold"><a>Follow Up Leads</a></li>
-                <li class="text-md font-bold"><a>My Leads</a></li>
-            </ul>
-
-        </div>
-
-        <!-- 🔹 RIGHT SIDE ICON DROPDOWNS -->
-        <div class="flex-none flex items-center gap-4">
-
-            <!-- 📩 Message Dropdown -->
-            <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
-                    <span class="material-icons">mail</span>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
-                    <li class="menu-title">Messages</li>
-                    <li><a>New lead from Rahul</a></li>
-                    <li><a>Follow-up reminder</a></li>
-                    <li><a>View all messages</a></li>
-                </ul>
-            </div>
-
-            <!-- 🔔 Notification Dropdown -->
-            <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
-                    <span class="material-icons">notifications</span>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
-                    <li class="menu-title">Notifications</li>
-                    <li><a>New Lead Assigned</a></li>
-                    <li><a>Lead Status Updated</a></li>
-                    <li><a>System Alert</a></li>
-                </ul>
-            </div>
-
-            <!-- 👤 User Dropdown -->
-            <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                    <span class="material-icons">account_circle</span>
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li class="menu-title">Soumyabrata</li>
-                    <li><a>Profile</a></li>
-                    <li><a>Settings</a></li>
-                    <li><a class="text-error">Logout</a></li>
-                </ul>
-            </div>
-
-        </div>
-
+      <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2 items-center">
+        <li class="text-md font-bold"><a href="./Dashboard.html">Dashboard</a></li>
+        <li class="text-md font-bold"><a href="./AdminDashboard.html">AdminDashboard</a></li>
+        <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
+        <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+        <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+        <li class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="text-md font-bold active:bg-neutral-focus flex items-center gap-1">
+            Settings
+            <span class="material-icons text-sm opacity-50">expand_more</span>
+          </div>
+          <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow-lg mt-4">
+            <li><a href="./Destinations.html">Destinations</a></li>
+            <li><a href="./Users.html">Users</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
+
+    <div class="flex-none flex items-center gap-2 lg:gap-4">
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+          <span class="material-icons">mail</span>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+          <li class="menu-title">Messages</li>
+          <li><a>New lead from Rahul</a></li>
+          <li><a>Follow-up reminder</a></li>
+          <li><a>View all messages</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+          <span class="material-icons">notifications</span>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+          <li class="menu-title">Notifications</li>
+          <li><a>New Lead Assigned</a></li>
+          <li><a>Lead Status Updated</a></li>
+          <li><a>System Alert</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <span class="material-icons">account_circle</span>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li class="menu-title">Soumyabrata</li>
+          <li><a>Profile</a></li>
+          <li><a>Settings</a></li>
+          <li><a class="text-error">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
     <!--main-->
     <div class="max-w-9xl mx-auto p-4 md:p-8 flex flex-col z-20 gap-6 w-full text-base-content">
