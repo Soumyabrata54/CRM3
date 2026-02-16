@@ -12,7 +12,7 @@
 <body class="bg-gray-50 min-h-screen p-8 font-sans">
 
     <div class=" mx-auto bg-white shadow-xl rounded-xl border border-gray-200 overflow-hidden">
-
+        <!--header-->
         <div class="p-6 border-b border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
 
             <div class="w-full md:w-auto">
@@ -28,6 +28,7 @@
             </div>
         </div>
 
+        <!--table-->
         <div class="p-0">
             <div class="overflow-x-auto">
                 <table class="table w-full">
@@ -56,12 +57,101 @@
                             <td>31 Dec 2100</td>
                             <td class="pr-6">
                                 <div class="flex gap-2">
-                                    <button
-                                        class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3">View</button>
-                                    <button
-                                        class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3">Edit</button>
-                                    <button
-                                        class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3">Delete</button>
+                                    <!-- You can open the modal using ID.showModal() method -->
+                                    <button class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-sm px-3" onclick="view_modal.showModal()">View</button>
+                                    <dialog id="view_modal" class="modal">
+                                        <div class="modal-box max-w-md">
+                                            <h3 class="font-bold text-lg mb-4 text-primary">Campaign Details</h3>
+                                            <div class="card bg-base-200 shadow-inner p-4">
+                                                <div class="grid grid-cols-2 gap-y-3">
+                                                    <span class="text-sm opacity-70">Campaign ID:</span>
+                                                    <span class="font-semibold">#1</span>
+
+                                                    <span class="text-sm opacity-70">Name:</span>
+                                                    <span class="font-semibold">Thailand SEM</span>
+
+                                                    <span class="text-sm opacity-70">Destination:</span>
+                                                    <span class="font-semibold">Thailand</span>
+
+                                                    <span class="text-sm opacity-70">Type:</span>
+                                                    <div class="badge badge-outline">SEM</div>
+
+                                                    <span class="text-sm opacity-70">Status:</span>
+                                                    <div class="badge badge-success gap-2 text-white">Active</div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-action">
+                                                <form method="dialog">
+                                                    <button class="btn">Close</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </dialog>
+
+                                    <button class="btn btn-xs bg-orange-400 hover:bg-orange-500 text-white border-none rounded-sm px-3" onclick="edit_modal.showModal()">Edit</button>
+                                    <dialog id="edit_modal" class="modal">
+                                        <div class="modal-box">
+                                            <h3 class="font-bold text-lg mb-4">Edit Campaign</h3>
+                                            <div class="space-y-4">
+                                                <div class="form-control">
+                                                    <label class="label"><span class="label-text">Campaign
+                                                            Name</span></label>
+                                                    <input type="text" value="Thailand SEM"
+                                                        class="input input-bordered w-full" />
+                                                </div>
+
+                                                <div class="grid grid-cols-2 gap-4">
+                                                    <div class="form-control">
+                                                        <label class="label"><span
+                                                                class="label-text">Destination</span></label>
+                                                        <input type="text" value="Thailand"
+                                                            class="input input-bordered w-full" />
+                                                    </div>
+                                                    <div class="form-control">
+                                                        <label class="label"><span
+                                                                class="label-text">Type</span></label>
+                                                        <select class="select select-bordered w-full">
+                                                            <option selected>SEM</option>
+                                                            <option>SEO</option>
+                                                            <option>Social</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-control">
+                                                    <label class="label"><span class="label-text">End
+                                                            Date</span></label>
+                                                    <input type="date" value="2100-12-31"
+                                                        class="input input-bordered w-full" />
+                                                </div>
+                                            </div>
+                                            <div class="modal-action">
+                                                <form method="dialog">
+                                                    <button class="btn btn-ghost">Cancel</button>
+                                                    <button class="btn btn-warning">Save Changes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </dialog>
+
+                                    <button class="btn btn-xs bg-pink-500 hover:bg-pink-600 text-white border-none rounded-sm px-3" onclick="my_modal_4.showModal()">Delete</button>
+                                    <dialog id="my_modal_4" class="modal">
+                                        <div class="modal-box border-t-4 border-error">
+                                            <h3 class="font-bold text-lg text-error">Confirm Deletion</h3>
+                                            <p class="py-4">Are you sure you want to delete <span
+                                                    class="font-bold italic">"Thailand SEM"</span>? This action cannot
+                                                be undone.</p>
+                                            <div class="modal-action">
+                                                <form method="dialog">
+                                                    <button class="btn btn-ghost">Keep it</button>
+                                                    <button class="btn btn-error text-white">Yes, Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <form method="dialog" class="modal-backdrop">
+                                            <button>close</button>
+                                        </form>
+                                    </dialog>
                                 </div>
                             </td>
                         </tr>
@@ -241,6 +331,7 @@
             </div>
 
         </div>
+        
     </div>
 
 </body>
