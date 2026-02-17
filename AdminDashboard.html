@@ -21,7 +21,7 @@
 </head>
 
 <body class="bg-crm-50 text-slate-800 font-sans min-h-screen flex flex-col">
-
+  
   <!--Navbar-->
   <div class="navbar bg-base-100 sticky top-0 z-40 shadow-sm border-b border-slate-200">
     <div class="flex-1 flex items-center gap-4 lg:gap-8">
@@ -31,7 +31,7 @@
           <span class="material-icons">menu</span>
         </label>
         <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a href="./Dashboard.html">Dashboard</a></li>
+          <li><a href="./Campaigns.html">Campaigns</a></li>
           <li><a href="./AdminDashboard.html">AdminDashboard</a></li>
           <li><a href="./AllLeads.html">All Leads</a></li>
           <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
@@ -51,11 +51,12 @@
       <a class="font-bold text-2xl">CRM</a>
 
       <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2 items-center">
-        <li class="text-md font-bold"><a href="./Dashboard.html">Dashboard</a></li>
+        <li class="text-md font-bold"><a href="./Campaigns.html">Campaigns</a></li>
         <li class="text-md font-bold"><a href="./AdminDashboard.html">AdminDashboard</a></li>
         <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
         <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
         <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+        <li class="text-md font-bold"><a href="./VerifiedLeads.html">Verified Leads</a></li>
         <li class="dropdown dropdown-end">
           <div tabindex="0" role="button" class="text-md font-bold active:bg-neutral-focus flex items-center gap-1">
             Settings
@@ -85,13 +86,39 @@
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle indicator">
           <span class="material-icons">notifications</span>
+
         </label>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
-          <li class="menu-title">Notifications</li>
-          <li><a>New Lead Assigned</a></li>
-          <li><a>Lead Status Updated</a></li>
-          <li><a>System Alert</a></li>
-        </ul>
+
+        <div tabindex="0"
+          class="dropdown-content z-[1] mt-3 p-0 shadow-lg bg-base-100 rounded-lg w-80 md:w-96 border border-slate-100 overflow-hidden">
+
+          <div class="flex items-center justify-between px-4 py-3 border-b border-slate-100 bg-white">
+            <span class="font-bold text-slate-700">Notifications</span>
+            <button class="text-xs text-indigo-600 font-semibold hover:text-indigo-800 hover:underline">Mark all as
+              read</button>
+          </div>
+
+          <!--Notifivation Dropdown  Items-->
+          <ul class="menu menu-sm max-h-[70vh] overflow-y-auto flex-nowrap p-0">
+
+            <li class="border-b border-slate-50 hover:bg-slate-300 last:border-none">
+              <a href="./notify.html" class="flex items-start gap-3 py-3 px-4 rounded-none  active:bg-slate-100">
+                <div
+                  class="flex-none w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center mt-1">
+                  <span class="material-icons text-sm">info</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="font-bold text-xs text-slate-700">New Lead Created</span>
+                  <span class="text-xs text-slate-500 leading-snug">A new lead has been created: Akash (16736)</span>
+                  <span class="text-[10px] text-slate-400 mt-0.5">Just now</span>
+                </div>
+              </a>
+            </li>
+
+
+          </ul>
+
+        </div>
       </div>
 
       <div class="dropdown dropdown-end">
@@ -119,48 +146,38 @@
       </div>
 
       <!--Cally Range Date-->
-      <div class="relative inline-block group-date-picker">
+      <div class="w-full sm:w-60">
+        <div class="dropdown dropdown-end w-full">
+          <div tabindex="0" role="button"
+            class="btn btn-outline border-slate-300 w-full justify-start font-normal normal-case h-10 min-h-0">
+            <span class="material-icons text-sm mr-2 text-slate-400">calendar_month</span>
+            <span class="text-sm">06-02-2026 to 13-02-2026</span>
+          </div>
 
-        <div
-          class="join shadow-sm border border-gray-200 bg-white rounded-lg cursor-pointer hover:border-indigo-300 transition-colors"
-          onclick="document.getElementById('rangeCalendar').classList.toggle('hidden')">
-          <input id="rangeStart"
-            class="join-item input input-sm bg-white focus:outline-none w-32 text-sm cursor-pointer pointer-events-none"
-            readonly value="2026-02-14" />
-          <span
-            class="join-item btn btn-sm btn-ghost no-animation bg-gray-50 border-x border-gray-200 text-gray-400 font-normal pointer-events-none">to</span>
-          <input id="rangeEnd"
-            class="join-item input input-sm bg-white focus:outline-none w-32 text-sm cursor-pointer pointer-events-none"
-            readonly value="2026-02-28" />
-        </div>
+          <div tabindex="0"
+            class="dropdown-content z-[100] mt-2 p-4 shadow-2xl bg-white rounded-xl border border-slate-100">
 
-        <div id="rangeCalendar"
-          class="absolute top-12 right-0 z-[100] shadow-2xl border border-gray-200 rounded-xl hidden bg-white p-4 w-[600px] max-md:w-[320px] max-md:fixed max-md:top-20 max-md:left-4 max-md:right-4">
-
-          <calendar-range months="2" class="[--cally-color-accent:#6366f1] text-gray-700 w-full" id="callyRange">
-
-            <div slot="header" class="flex items-center justify-between mb-4">
-              <button type="button" slot="previous"
-                class="btn btn-xs btn-outline btn-circle border-gray-300 hover:bg-gray-100">
-                <svg class="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M15.75 19.5 8.25 12l7.5-7.5" />
-                </svg>
-              </button>
-
-              <button type="button" slot="next"
-                class="btn btn-xs btn-outline btn-circle border-gray-300 hover:bg-gray-100">
-                <svg class="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
-            </div>
-
-            <div class="flex flex-wrap gap-8 justify-center">
+            <!--Calender-->
+            <calendar-range style="--color-accent: #4f46e5; width: 100%;"
+              onchange="selectDate('departure-input', 'departure-calendar', event)">
+              <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                  clip-rule="evenodd" />
+              </svg>
+              <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                  clip-rule="evenodd" />
+              </svg>
               <calendar-month></calendar-month>
-              <calendar-month offset="1" class="max-md:hidden"></calendar-month>
-            </div>
-          </calendar-range>
+            </calendar-range>
+
+          </div>
+
+
         </div>
       </div>
 
@@ -1013,6 +1030,7 @@
     </div>
 
   </main>
+
 </body>
 
 </html>

@@ -5,15 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campaigns List</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <script type="module" src="https://unpkg.com/cally"></script>
 
 </head>
 
-<body class="bg-gray-50 min-h-screen p-8 font-sans">
+<body class="bg-slate-100 min-h-screen pb-10">
 
-    <div class=" mx-auto bg-white shadow-xl rounded-xl border border-gray-200 overflow-hidden">
+
+    <!--Navbar-->
+    <div class="navbar bg-base-100 sticky top-0 z-40 shadow-sm border-b border-slate-200">
+        <div class="flex-1 flex items-center gap-4 lg:gap-8">
+
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                    <span class="material-icons">menu</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="./Campaigns.html">Campaigns</a></li>
+                    <li><a href="./AdminDashboard.html">AdminDashboard</a></li>
+                    <li><a href="./AllLeads.html">All Leads</a></li>
+                    <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                    <li><a href="./MyLeads.html">My Leads</a></li>
+                    <li>
+                        <details>
+                            <summary>Settings</summary>
+                            <ul>
+                                <li><a href="./Destinations.html">Destinations</a></li>
+                                <li><a href="./Users.html">Users</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+
+            <a class="font-bold text-2xl">CRM</a>
+
+            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2 items-center">
+                <li class="text-md font-bold"><a href="./Campaigns.html">Campaigns</a></li>
+                <li class="text-md font-bold"><a href="./AdminDashboard.html">AdminDashboard</a></li>
+                <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
+                <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+                <li class="text-md font-bold"><a href="./VerifiedLeads.html">Verified Leads</a></li>
+                <li class="dropdown dropdown-end">
+                    <div tabindex="0" role="button"
+                        class="text-md font-bold active:bg-neutral-focus flex items-center gap-1">
+                        Settings
+                        <span class="material-icons text-sm opacity-50">expand_more</span>
+                    </div>
+                    <ul tabindex="0"
+                        class="dropdown-content menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow-lg mt-4">
+                        <li><a href="./Destinations.html">Destinations</a></li>
+                        <li><a href="./Users.html">Users</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex-none flex items-center gap-2 lg:gap-4">
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">mail</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+                    <li class="menu-title">Messages</li>
+                    <li><a>New lead from Rahul</a></li>
+                    <li><a>Follow-up reminder</a></li>
+                    <li><a>View all messages</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">notifications</span>
+
+                </label>
+
+                <div tabindex="0"
+                    class="dropdown-content z-[1] mt-3 p-0 shadow-lg bg-base-100 rounded-lg w-80 md:w-96 border border-slate-100 overflow-hidden">
+
+                    <div class="flex items-center justify-between px-4 py-3 border-b border-slate-100 bg-white">
+                        <span class="font-bold text-slate-700">Notifications</span>
+                        <button class="text-xs text-indigo-600 font-semibold hover:text-indigo-800 hover:underline">Mark
+                            all as
+                            read</button>
+                    </div>
+
+                    <!--Notifivation Dropdown  Items-->
+                    <ul class="menu menu-sm max-h-[70vh] overflow-y-auto flex-nowrap p-0">
+
+                        <li class="border-b border-slate-50 hover:bg-slate-300 last:border-none">
+                            <a href="./notify.html"
+                                class="flex items-start gap-3 py-3 px-4 rounded-none  active:bg-slate-100">
+                                <div
+                                    class="flex-none w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center mt-1">
+                                    <span class="material-icons text-sm">info</span>
+                                </div>
+                                <div class="flex flex-col gap-0.5">
+                                    <span class="font-bold text-xs text-slate-700">New Lead Created</span>
+                                    <span class="text-xs text-slate-500 leading-snug">A new lead has been created: Akash
+                                        (16736)</span>
+                                    <span class="text-[10px] text-slate-400 mt-0.5">Just now</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                    <span class="material-icons">account_circle</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">Soumyabrata</li>
+                    <li><a>Profile</a></li>
+                    <li><a>Settings</a></li>
+                    <li><a class="text-error">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Main Body-->
+    <div class=" mx-auto mt-6 max-w-[99%] bg-white shadow-xl rounded-xl border border-gray-200 overflow-hidden">
         <!--header-->
         <div class="p-6 border-b border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
 
@@ -541,6 +669,7 @@
     </div>
 
 </body>
+
 <script>
     function selectDate(inputId, calendarId, event) {
         if (event.target.value) {
