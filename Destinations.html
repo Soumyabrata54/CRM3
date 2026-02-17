@@ -5,12 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinations CRM</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
 </head>
 
-<body class="bg-gray-50   font-sans">
+<body class="bg-slate-100 ">
+
+
 
     <!--Navbar-->
     <div class="navbar bg-base-100 sticky top-0 z-40 shadow-sm border-b border-slate-200">
@@ -42,12 +49,13 @@
             <a class="font-bold text-2xl">CRM</a>
 
             <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2 items-center">
-                <li class="text-md font-bold"><a href="./Campaigns.html">Campaigns</a></li>
+
                 <li class="text-md font-bold"><a href="./AdminDashboard.html">AdminDashboard</a></li>
                 <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
                 <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
                 <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
                 <li class="text-md font-bold"><a href="./VerifiedLeads.html">Verified Leads</a></li>
+                <li class="text-md font-bold"><a href="./Campaigns.html">Campaigns</a></li>
                 <li class="dropdown dropdown-end">
                     <div tabindex="0" role="button"
                         class="text-md font-bold active:bg-neutral-focus flex items-center gap-1">
@@ -55,7 +63,7 @@
                         <span class="material-icons text-sm opacity-50">expand_more</span>
                     </div>
                     <ul tabindex="0"
-                        class="dropdown-content menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow-lg mt-4">
+                        class="dropdown-content top-7 menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow-lg mt-4">
                         <li><a href="./Destinations.html">Destinations</a></li>
                         <li><a href="./Users.html">Users</a></li>
                     </ul>
@@ -134,14 +142,14 @@
     </div>
 
     <!--Main Body-->
-    <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-xl mt-5 border border-gray-200 overflow-hidden">
+    <div class="max-w-[99%] mx-auto bg-white shadow-lg rounded-xl mt-5 border border-gray-200 overflow-hidden">
 
         <!--Header-->
         <div
             class="p-3 border-b border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
 
             <div>
-                <h1 class="text-2xl font-bold text-gray-800">Destinations</h1>
+                <h1 class="tittle text-black text-xl font-bold mb-2 xl:mb-0">Destinations</h1>
                 <p class="text-sm text-gray-500 mt-1">Manage travel destinations</p>
             </div>
 
@@ -154,68 +162,6 @@
                 <!-- Open the modal using ID.showModal() method -->
                 <button class="btn text-white bg-gray-600" onclick="my_modal_2.showModal()">Create New
                     Destination</button>
-                <dialog id="my_modal_2" class="modal">
-                    <div class="modal-box max-w-4xl">
-                        <!--CreateDestModal.html-->
-                        <div class="card w-full  bg-base-100 shadow-xl rounded-md">
-                            <div class="card-body p-6">
-
-                                <div class="flex justify-between items-center border-b border-gray-200 pb-4 mb-4">
-                                    <h2 class="card-title text-xl font-bold text-gray-700">Create New Destination</h2>
-
-                                </div>
-
-                                <form class="space-y-4">
-
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                                        <div class="form-control w-full">
-                                            <label class="label">
-                                                <span class="label-text font-semibold text-gray-600">Destination
-                                                    Name</span>
-                                            </label>
-                                            <input type="text" placeholder="Enter destination name"
-                                                class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
-                                        </div>
-
-                                        <div class="form-control w-full">
-                                            <label class="label">
-                                                <span class="label-text font-semibold text-gray-600">Description</span>
-                                            </label>
-                                            <input type="text" placeholder="Write a short description..."
-                                                class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
-                                        </div>
-                                    </div>
-
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div class="form-control w-full">
-                                            <label class="label">
-                                                <span class="label-text font-semibold text-gray-600">Status</span>
-                                            </label>
-                                            <select
-                                                class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
-                                                <option disabled selected>Select Status</option>
-                                                <option value="active">Active</option>
-                                                <option value="inactive">Inactive</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-actions justify-start pt-4">
-                                        <button type="submit"
-                                            class="btn bg-indigo-500 hover:bg-indigo-600 text-white border-none w-32">
-                                            Submit
-                                        </button>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <form method="dialog" class="modal-backdrop">
-                        <button>close</button>
-                    </form>
-                </dialog>
             </div>
         </div>
 
@@ -241,155 +187,14 @@
 
                         <tr class="hover:bg-gray-50 transition-colors w-11">
                             <td class="pl-6 font-medium">1</td>
-                            <td class="font-semibold text-gray-800">Thailand</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>04-06-2025 09:44:54</td>
+                            <td class="font-bold text-md">Thailand</td>
+                            <td class="font-black text-black">--</td>
+                            <td><span class="badge badge-success text-white badge-sm font-bold">Active</span></td>
+                            <td class="font-bold text-md">04Feb 25 17:40</td>
                             <td class="pr-6">
-                                <button class="btn btn-xs text-blue-600 border-none text-xm"
+                                <button class="btn btn-xs text-blue-600 border-none text-md"
                                     onclick="edit_modal_thailand.showModal()">Edit</button>
-                                <dialog id="edit_modal_thailand" class="modal">
-                                    <div class="modal-box">
-                                        <h3 class="font-bold text-lg mb-6 flex items-center gap-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                            </svg>
-                                            Edit Campaign Details
-                                        </h3>
-
-                                        <div class="space-y-4">
-                                            <div class="form-control w-full">
-                                                <label class="label">
-                                                    <span class="label-text font-semibold">Name</span>
-                                                </label>
-                                                <input type="text" value="Thailand"
-                                                    class="input input-bordered w-full focus:input-primary" />
-                                            </div>
-
-                                            <div class="form-control w-full">
-                                                <label class="label">
-                                                    <span class="label-text font-semibold">Description</span>
-                                                </label>
-                                                <textarea class="textarea textarea-bordered h-24 focus:textarea-primary"
-                                                    placeholder="Enter description...">--</textarea>
-                                            </div>
-
-                                            <div class="form-control w-full">
-                                                <label class="label">
-                                                    <span class="label-text font-semibold">Status</span>
-                                                </label>
-                                                <select class="select select-bordered w-full focus:select-primary">
-                                                    <option value="active" selected>Active</option>
-                                                    <option value="inactive">Inactive</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal-action">
-                                            <form method="dialog">
-                                                <button class="btn btn-ghost">Cancel</button>
-                                                <button class="btn btn-primary px-8">Update</button>
-                                            </form>
-                                        </div>
-                                    </div>
-
-                                    <form method="dialog" class="modal-backdrop">
-                                        <button>close</button>
-                                    </form>
-                                </dialog>
                             </td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">2</td>
-                            <td class="font-semibold text-gray-800">Bhutan</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>17-06-2025 07:07:01</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">3</td>
-                            <td class="font-semibold text-gray-800">Dubai</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>23-07-2025 11:48:25</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">4</td>
-                            <td class="font-semibold text-gray-800">Vietnam</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>28-08-2025 06:40:26</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">5</td>
-                            <td class="font-semibold text-gray-800">Australia</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>04-09-2025 05:15:24</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">6</td>
-                            <td class="font-semibold text-gray-800">Bali</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>08-10-2025 05:10:44</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">7</td>
-                            <td class="font-semibold text-gray-800">Europe</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>08-10-2025 05:10:54</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">8</td>
-                            <td class="font-semibold text-gray-800">Singapore</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>08-10-2025 05:11:05</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">9</td>
-                            <td class="font-semibold text-gray-800">Australia</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-warning text-white badge-sm font-medium">Inactive</span></td>
-                            <td>08-10-2025 05:11:16</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="pl-6 font-medium">10</td>
-                            <td class="font-semibold text-gray-800">Kashmir</td>
-                            <td class="text-gray-400 italic">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-medium">Active</span></td>
-                            <td>19-01-2026 07:27:25</td>
-                            <td class="pr-6"><a href="#"
-                                    class="text-indigo-600 hover:text-indigo-800 font-medium">Edit</a></td>
                         </tr>
 
 
@@ -413,6 +218,121 @@
         </div>
 
     </div>
+
+
+    <dialog id="my_modal_2" class="modal">
+        <div class="modal-box p-0">
+            <!--CreateDestModal.html-->
+            <div class="card w-full  bg-base-100">
+                <div class="card-body ">
+
+                    <div class="flex justify-between items-center ">
+                        <h2 class="card-title text-xl font-bold text-gray-700">Create New Destination</h2>
+
+                    </div>
+                    <div class="divider"></div>
+                    <form class="space-y-4">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                            <div class="form-control w-full">
+                                <label class="label">
+                                    <span class="label-text font-semibold text-gray-600">Destination
+                                        Name</span>
+                                </label>
+                                <input type="text" placeholder="Enter destination name"
+                                    class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                            </div>
+
+                            <div class="form-control w-full">
+                                <label class="label">
+                                    <span class="label-text font-semibold text-gray-600">Description</span>
+                                </label>
+                                <input type="text" placeholder="Write a short description..."
+                                    class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="form-control w-full">
+                                <label class="label">
+                                    <span class="label-text font-semibold text-gray-600">Status</span>
+                                </label>
+                                <select
+                                    class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
+                                    <option disabled selected>Select Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="card-actions justify-start pt-4">
+                            <button type="submit"
+                                class="btn bg-indigo-500 hover:bg-indigo-600 text-white border-none w-32">
+                                Submit
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+
+    <dialog id="edit_modal_thailand" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg mb-6 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                </svg>
+                Edit Campaign Details
+            </h3>
+
+            <div class="space-y-4">
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text font-semibold">Name</span>
+                    </label>
+                    <input type="text" value="Thailand" class="input input-bordered w-full focus:input-primary" />
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text font-semibold">Description</span>
+                    </label>
+                    <textarea class="textarea textarea-bordered h-10 block focus:textarea-primary"
+                        placeholder="...">--</textarea>
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text font-semibold">Status</span>
+                    </label>
+                    <select class="select select-bordered w-full focus:select-primary">
+                        <option value="active" selected>Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn btn-ghost">Cancel</button>
+                    <button class="btn btn-primary px-8">Update</button>
+                </form>
+            </div>
+        </div>
+
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
 
 </body>
 

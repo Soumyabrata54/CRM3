@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM - Sign In</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        /* Simulate the dotted/noise background for captcha */
+        .captcha-box {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 6px 6px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-base-100 flex items-center justify-center p-4">
+
+    <div class="card w-full max-w-[480px] bg-white shadow-xl border border-slate-100 rounded-lg">
+        <div class="card-body p-8 md:p-10">
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-800">CRM</h2>
+                <p class="text-slate-500 mt-2 text-sm">Sign in to continue.</p>
+            </div>
+
+            <form class="flex flex-col gap-5">
+
+                <div class="form-control">
+                    <input type="text" placeholder="Username"
+                        class="input input-bordered w-full rounded-md border-slate-300 focus:border-[#6366f1] focus:outline-none h-12" />
+                </div>
+
+                <div class="form-control">
+                    <input type="password" placeholder="Password"
+                        class="input input-bordered w-full rounded-md border-slate-300 focus:border-[#6366f1] focus:outline-none h-12" />
+                </div>
+
+                <div class="form-control">
+                    <label class="label p-0 mb-2">
+                        <span class="label-text text-slate-700 font-medium">Enter the code below:</span>
+                    </label>
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <div class="captcha-box h-12 w-full border border-slate-300 rounded-md flex items-center justify-center select-none">
+                                <span class="text-xl font-bold tracking-[0.3em] text-slate-700 line-through decoration-slate-400/50">1895</span>
+                            </div>
+                            <div class="mt-1">
+                                <button type="button" class="btn btn-link btn-xs p-0 text-[#6366f1] no-underline hover:text-[#4f46e5] flex items-center gap-1">
+                                    Reload 
+                                    <span class="material-icons text-[14px]">refresh</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex-1">
+                            <input type="text" placeholder="Enter code"
+                                class="input input-bordered w-full rounded-md border-slate-300 focus:border-[#6366f1] focus:outline-none h-12" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-2">
+                    <button class="btn bg-[#6366f1] hover:bg-[#4f46e5] text-white w-full border-none rounded-sm h-12 text-base font-semibold uppercase shadow-md shadow-indigo-100">
+                        Sign In
+                    </button>
+                </div>
+
+                <div class="flex justify-between items-center mt-2">
+                    <label class="flex items-center gap-2 cursor-pointer group">
+                        <span class="text-slate-500 text-sm font-medium group-hover:text-slate-700 transition-colors">Keep me signed in</span>
+                    </label>
+                    
+                    <a href="#" class="text-slate-900 text-sm font-medium hover:text-[#6366f1] transition-colors">Forgot password?</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
