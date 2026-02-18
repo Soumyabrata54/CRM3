@@ -38,10 +38,10 @@
     </style>
 </head>
 
-<body class="bg-slate-100 min-h-screen pb-10 ">
+<body class="bg-[#f2f2f2] min-h-screen pb-10 ">
 
     <!--Navbar-->
-    <div class="navbar bg-base-100 sticky top-0 z-40 shadow-sm border-b border-slate-200">
+    <div class="navbar bg-white sticky top-0 z-40 shadow-sm border-b border-slate-200">
         <div class="flex-1 flex items-center gap-4 lg:gap-8">
 
             <div class="dropdown lg:hidden">
@@ -213,12 +213,13 @@
 
         </div>
     </div>
-
+     
+    <!--Main-->
     <div
         class="max-w-[99%] mx-auto mt-6 bg-white rounded-xl border border-slate-200 shadow-sm relative overflow-visible">
 
         <!--Header +Filters-->
-        <div class="HF p-4 border-b border-slate-200 relative z-30">
+        <div class="HF p-4 border-b border-white relative z-30">
 
             <div class="flex flex-col xl:flex-row justify-between items-center gap-3">
 
@@ -302,7 +303,7 @@
                     <button class="btn btn-sm btn-primary btn-soft">
                         Search
                     </button>
-                    <button class="tooltip btn btn-xs btn-soft btn-primary" data-tip="Excel ">
+                    <button class="tooltip tooltip-left btn btn-xs btn-soft btn-primary" data-tip="Excel download ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             aria-hidden="true">
@@ -1665,7 +1666,7 @@
         </div>
 
     </div>
-    
+
     <dialog id="logout_modal" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box p-0 overflow-hidden rounded-2xl sm:max-w-sm">
 
