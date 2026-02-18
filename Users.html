@@ -141,7 +141,7 @@
     </div>
 
     <!--main Body-->
-    <div class=" max-w-[99%] mx-auto shadow-xl rounded-xl mt-5 p-6  border border-gray-200 overflow-visible bg-white ">
+    <div class=" max-w-[99%] mx-auto shadow-xl rounded-xl mt-5 p-6  border border-gray-200  bg-white ">
 
         <!--Header-->
         <div class="flex  md:flex-row justify-between items-start md:items-center mb-6 gap-4">
@@ -151,15 +151,15 @@
             </div>
 
             <div class="flex gap-2">
-                <button class="btn btn-outline border-gray-300 hover:bg-gray-100 font-bold"
+                <button class="btn btn-outline btn-primary"
                     onclick="roles_modal.showModal()">
                     Roles
                 </button>
-                <button class="btn btn-outline border-gray-300 hover:bg-gray-100 font-bold"
+                <button class="btn btn-outline btn-primary"
                     onclick="permissions_modal.showModal()">
                     Permission
                 </button>
-                <button class="btn bg-[#6366f1] hover:bg-[#4f46e5] text-white border-none font-bold"
+                <button class="btn btn-soft btn-primary"
                     onclick="create_user_modal.showModal()">
                     Create New User
                 </button>
@@ -167,9 +167,10 @@
         </div>
 
         <!--Table Container-->
-        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-visible">
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-x-auto">
             <div class="max-w-[99vw]">
                 <table class="table table-xs w-full">
+
                     <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
                         <tr>
                             <th class="font-bold">#</th>
@@ -182,7 +183,37 @@
                             <th class="font-bold text-center">Action</th>
                         </tr>
                     </thead>
+
                     <tbody>
+
+                        <tr class="hover:bg-indigo-50/50 transition-colors duration-200 cursor-default">
+                            <th class="text-gray-500">1</th>
+                            <td class="font-bold text-black">Deepankar Mondal</td>
+                            <td class="text-black font-bold">tech@goflysmart.com</td>
+                            <td class="text-black font-bold">9832500105</td>
+                            <td class="text-black font-bold">05-05-2025</td>
+                            <td>
+                                <div class="badge badge-ghost font-medium">Admin</div>
+                            </td>
+                            <td>
+                                <div class="badge badge-outline badge-success font-bold">Active</div>
+                            </td>
+                            <td class="text-center">
+                                <div class="dropdown dropdown-end dropdown-left">
+
+                                    <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+                                    <button class="btn btn-sm border-none bg-neutral-focus" popovertarget="popover-1" style="anchor-name:--anchor-1">
+                                        Button
+                                    </button>
+                                    <ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm" popover
+                                        id="popover-1" style="position-anchor:--anchor-1">
+                                        <li><a>Item 1</a></li>
+                                        <li><a>Item 2</a></li>
+                                    </ul>
+
+                                </div>
+                            </td>
+                        </tr>
 
                         <tr class="hover:bg-indigo-50/50 transition-colors duration-200 cursor-default">
                             <th class="text-gray-500">1</th>
@@ -211,8 +242,10 @@
 
                                     <ul tabindex="-1"
                                         class="dropdown-content menu bg-base-100 rounded-box z-[100] w-40 p-2 shadow-xl border border-gray-100">
-                                        <li><a class="text-indigo-600 font-medium">Edit User</a></li>
-                                        <li><a class="text-error font-medium">Deactivate</a></li>
+                                        <li><a class="text-indigo-600 font-medium"
+                                                onclick="edit_user_modal.showModal()">Edit User</a></li>
+                                        <li><a class="text-error font-medium"
+                                                onclick="deactivate_user_modal.showModal()">Deactivate</a></li>
                                     </ul>
 
                                 </div>
@@ -827,6 +860,106 @@
         <form method="dialog" class="modal-backdrop bg-gray-900/20 backdrop-blur-sm">
             <button>close</button>
         </form>
+    </dialog>
+
+    <dialog id="edit_user_modal" class="modal">
+        <div class="modal-box w-11/12 max-w-2xl p-0 overflow-visible rounded-md bg-white">
+
+            <div
+                class="flex justify-between items-center border-b border-gray-200 p-5 bg-white sticky top-0 z-20 rounded-t-md">
+                <h3 class="font-bold text-lg text-gray-800">Edit User Details</h3>
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost text-gray-500">✕</button>
+                </form>
+            </div>
+
+            <div class="p-6">
+                <form class="space-y-4">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-control w-full">
+                            <label class="label"><span class="label-text font-semibold text-gray-700">Full
+                                    Name</span></label>
+                            <input type="text" value="Deepankar Mondal"
+                                class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label"><span class="label-text font-semibold text-gray-700">Email
+                                    Address</span></label>
+                            <input type="email" value="tech@goflysmart.com"
+                                class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-control w-full">
+                            <label class="label"><span class="label-text font-semibold text-gray-700">Phone
+                                    Number</span></label>
+                            <input type="text" value="9832500105"
+                                class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label"><span
+                                    class="label-text font-semibold text-gray-700">Role</span></label>
+                            <select class="select select-bordered w-full focus:outline-none focus:border-indigo-500">
+                                <option selected>Admin</option>
+                                <option>Manager</option>
+                                <option>Agent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-control w-full">
+                        <label class="label"><span class="label-text font-semibold text-gray-700">Account
+                                Status</span></label>
+                        <select
+                            class="select select-bordered w-full focus:outline-none focus:border-indigo-500 text-green-600 font-medium">
+                            <option selected value="active">Active</option>
+                            <option value="inactive" class="text-gray-500">Inactive</option>
+                            <option value="suspended" class="text-red-500">Suspended</option>
+                        </select>
+                    </div>
+
+                    <div class="modal-action pt-4">
+                        <form method="dialog">
+                            <button class="btn btn-ghost hover:bg-gray-100">Cancel</button>
+                        </form>
+                        <button class="btn bg-indigo-600 hover:bg-indigo-700 text-white border-none shadow-md">Save
+                            Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop bg-gray-900/20 backdrop-blur-sm"><button>close</button></form>
+    </dialog>
+
+    <dialog id="deactivate_user_modal" class="modal">
+        <div class="modal-box p-0 rounded-lg border-t-4 border-error">
+
+            <div class="p-6">
+                <h3 class="font-bold text-lg text-error flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    Confirm Deactivation
+                </h3>
+                <p class="py-4 text-gray-600">
+                    Are you sure you want to deactivate <span class="font-bold text-gray-800">Deepankar Mondal</span>?
+                    <br><span class="text-sm text-gray-500 mt-2 block">This user will no longer be able to log in to the
+                        system.</span>
+                </p>
+
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn btn-ghost hover:bg-gray-100">Cancel</button>
+                        <button class="btn btn-error text-white shadow-md">Yes, Deactivate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop bg-gray-900/20 backdrop-blur-sm"><button>close</button></form>
     </dialog>
 </body>
 
