@@ -12,79 +12,171 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="min-h-screen flex bg-white items-center justify-center font-['Inter']">
+<body class="min-h-screen flex items-center justify-center bg-slate-100 font-['Inter'] p-4">
 
-    <div class="w-full lg:w-[45%] mx-auto flex flex-col rounded-md shadow-xl justify-center  md:px-16 lg:px-24 py-12  relative z-10">
+    <div class="card lg:card-side bg-base-100 shadow-xl max-w-4xl w-full min-h-[600px] overflow-hidden rounded-2xl">
 
-        <div class="mt-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 leading-tight mb-2">
-                CRM
-            </h2>
-            <p class="text-gray-400 text-sm mb-8">Welcome back! Please login to your account.</p>
-
-            <form class="flex flex-col gap-5">
-
-                <div class="form-control w-full">
-                    <label class="label pl-0 pb-1">
-                        <span class="label-text font-semibold text-slate-700">Username</span>
-                    </label>
-                    <input type="text" placeholder="Enter your username"
-                        class="input input-bordered w-full h-12 text-sm rounded-sm border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-600 focus:outline-none transition-colors" />
+        <div class="card-body w-full lg:w-1/2 p-8 md:p-12 justify-center">
+            
+            <div class="w-full">
+                <div class="mb-8">
+                    <h2 class="card-title text-3xl font-extrabold text-blue-900 tracking-tight">CRM</h2>
+                    <p class="text-sm text-slate-500 mt-2">Welcome back! Please login to your account.</p>
                 </div>
 
-                <div class="form-control w-full">
-                    <label class="label pl-0 pb-1">
-                        <span class="label-text font-semibold text-slate-700">Password</span>
-                    </label>
-                    <input type="password" placeholder="Enter your password"
-                        class="input input-bordered w-full h-12 text-sm rounded-sm border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-600 focus:outline-none transition-colors" />
-                </div>
+                <form class="flex flex-col gap-5">
 
-                <div class="form-control w-full">
-                    <label class="label pl-0 pb-1">
-                        <span class="label-text font-semibold text-slate-700">Enter the code below:</span>
-                    </label>
-                    
-                    <div class="flex gap-6">
-                        <div class="flex flex-col">
-                            <div class="w-32 h-12 border border-slate-300 rounded-sm flex items-center justify-center select-none bg-slate-100 relative overflow-hidden" 
-                                 style="background-image: radial-gradient(#94a3b8 1px, transparent 1px); background-size: 6px 6px;">
-                                <span class="text-xl font-bold tracking-[0.3em] text-slate-700 line-through decoration-slate-400/50 z-10 font-mono">2702</span>
-                                <div class="absolute inset-0 bg-slate-200/20 mix-blend-multiply"></div>
+                    <div class="form-control w-full">
+                        <label class="label pl-0 pb-1.5">
+                            <span class="label-text font-medium text-slate-700">Username</span>
+                        </label>
+                        <input type="text" placeholder="Enter your username"
+                            class="input input-bordered w-full h-11 rounded-lg bg-slate-50 focus:bg-white focus:border-blue-600 focus:outline-none transition-all" />
+                    </div>
+
+                    <div class="form-control w-full">
+                        <label class="label pl-0 pb-1.5">
+                            <span class="label-text font-medium text-slate-700">Password</span>
+                        </label>
+                        <input type="password" placeholder="Enter your password"
+                            class="input input-bordered w-full h-11 rounded-lg bg-slate-50 focus:bg-white focus:border-blue-600 focus:outline-none transition-all" />
+                    </div>
+
+                    <div class="form-control w-full">
+                        <label class="label pl-0 pb-1.5">
+                            <span class="label-text font-medium text-slate-700">Security Check</span>
+                        </label>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="flex flex-col">
+                                <div class="w-28 h-11 border border-slate-200 rounded-lg flex items-center justify-center select-none bg-slate-100 relative overflow-hidden" 
+                                     style="background-image: radial-gradient(#94a3b8 1px, transparent 1px); background-size: 6px 6px;">
+                                    <span class="text-xl font-bold tracking-[0.3em] text-slate-700 line-through decoration-slate-400/50 z-10 font-mono">2702</span>
+                                    <div class="absolute inset-0 bg-slate-200/20 mix-blend-multiply"></div>
+                                </div>
+                                <button type="button" class="btn btn-link btn-xs p-0 text-blue-600 no-underline hover:text-blue-800 flex items-center justify-start gap-1 mt-1 w-fit">
+                                    Reload <span class="material-icons text-[14px]">refresh</span>
+                                </button>
                             </div>
-                            
-                            <button type="button" class="btn btn-link btn-xs p-0 text-[#6366f1] no-underline hover:text-[#4f46e5] flex items-center justify-start gap-1 mt-1 w-fit">
-                                Reload 
-                                <span class="material-icons text-[14px]">refresh</span>
-                            </button>
-                        </div>
-
-                        <div class="flex-1">
-                            <input type="text" placeholder="Enter code"
-                                class="input input-bordered w-full h-12 text-sm rounded-sm border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-600 focus:outline-none transition-colors" />
+                            <div class="flex-1">
+                                <input type="text" placeholder="Enter code"
+                                    class="input input-bordered w-full h-11 rounded-lg bg-slate-50 focus:bg-white focus:border-blue-600 focus:outline-none transition-all" />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="flex justify-between items-center mt-1">
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input type="checkbox"
-                            class="checkbox checkbox-xs rounded-sm border-gray-300 checked:border-blue-600 checked:bg-blue-600" />
-                        <span class="text-xs text-gray-500 font-medium">Keep me signed in</span>
-                    </label>
-                    <a href="./ForgotPassword.html" class="text-xs text-gray-500 hover:text-blue-600 font-medium">Forgot Password?</a>
-                </div>
+                    <div class="flex justify-between items-center mt-1">
+                        <label class="label cursor-pointer justify-start gap-2 p-0 group">
+                            <input type="checkbox" class="checkbox checkbox-xs rounded border-slate-300 checked:border-blue-600 checked:bg-blue-600 [--chkbg:theme(colors.blue.600)] [--chkfg:white]" />
+                            <span class="label-text text-slate-500 group-hover:text-blue-600 transition-colors">Remember me</span>
+                        </label>
+                        <a href="./ForgotPassword.html" class="link link-hover text-sm font-medium text-blue-600">Forgot Password?</a>
+                    </div>
 
-                <div class="flex gap-4 mt-6">
-                    <button
-                        class="btn  btn-primary">
-                        LOGIN
-                    </button>
-                </div>
+                    <div class="card-actions mt-4">
+                        <button class="btn bg-blue-600 hover:bg-blue-700 text-white w-full border-none rounded-lg h-12 text-base font-semibold shadow-md normal-case">
+                            Sign In
+                        </button>
+                    </div>
 
-            </form>
+                </form>
+            </div>
         </div>
+
+        <figure class="hidden md:block w-1/2 bg-slate-900 relative p-0 m-0">
+            
+            <div class="carousel w-full h-full relative" id="carouselContainer">
+                
+                <div class="carousel-item relative w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 mix-blend-overlay" />
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 opacity-90"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center px-12 text-white text-center z-10">
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-xl">
+                                <span class="material-icons text-3xl">analytics</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Data-Driven Insights</h3>
+                        <p class="text-blue-100 text-sm leading-relaxed">
+                            Visualize your sales performance with real-time analytics and actionable reports.
+                        </p>
+                    </div>
+                </div> 
+
+                <div class="carousel-item relative w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 mix-blend-overlay" />
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 opacity-90"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center px-12 text-white text-center z-10">
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-xl">
+                                <span class="material-icons text-3xl">groups</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Seamless Collaboration</h3>
+                        <p class="text-blue-100 text-sm leading-relaxed">
+                            Empower your team to work together efficiently and close deals faster.
+                        </p>
+                    </div>
+                </div> 
+
+                <div class="carousel-item relative w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 mix-blend-overlay" />
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-900 via-blue-900 to-sky-900 opacity-90"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center px-12 text-white text-center z-10">
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-xl">
+                                <span class="material-icons text-3xl">rocket_launch</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Automate Your Workflow</h3>
+                        <p class="text-blue-100 text-sm leading-relaxed">
+                            Save time on manual tasks with powerful automation tools.
+                        </p>
+                    </div>
+                </div> 
+
+            </div>
+            
+            <div class="flex justify-center w-full py-2 gap-2 absolute bottom-8 z-20" id="carouselDots">
+                <button class="w-2 h-2 rounded-full bg-white transition-all opacity-100"></button> 
+                <button class="w-2 h-2 rounded-full bg-white transition-all opacity-40"></button> 
+                <button class="w-2 h-2 rounded-full bg-white transition-all opacity-40"></button> 
+            </div>
+
+        </figure>
+
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('carouselContainer');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const dots = document.querySelectorAll('#carouselDots button');
+            let currentIndex = 0;
+            const totalSlides = items.length;
+
+            // Function to scroll to specific slide
+            const scrollCarousel = (index) => {
+                const itemWidth = items[0].clientWidth;
+                // Use scrollTo for smooth scrolling without changing URL hash
+                carousel.scrollTo({
+                    left: itemWidth * index,
+                    behavior: 'smooth'
+                });
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.style.opacity = i === index ? '1' : '0.4';
+                });
+            };
+
+            // Auto-play interval (2000ms = 2 seconds)
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                scrollCarousel(currentIndex);
+            }, 2000);
+        });
+    </script>
 
 </body>
 
