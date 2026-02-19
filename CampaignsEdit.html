@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+</head>
+
+<body>
+    <div class="p-6 max-w-3xl mx-auto w-full text-base-content">
+
+        <div class="flex items-center gap-4 mb-8">
+            <a href="/campaigns" class="btn btn-circle btn-ghost btn-sm bg-slate-100 hover:bg-slate-200">
+                <span class="material-icons text-[18px]">arrow_back</span>
+            </a>
+            <div>
+                <h1 class="text-2xl font-bold text-slate-800">Campaign <span class="text-indigo-600">#1</span> Edit</h1>
+                <p class="text-sm text-slate-500 mt-1">Update details and tracking configuration</p>
+            </div>
+        </div>
+
+        <div class="card bg-white border border-slate-200 shadow-sm rounded-2xl">
+            <div class="card-body p-6 md:p-8">
+                <form action="/campaigns/update/1" method="POST" class="space-y-6">
+
+                    <div class="space-y-5">
+                        <div class="form-control">
+                            <label class="label pb-1.5 pt-0">
+                                <span class="label-text font-semibold text-slate-700">Campaign Name</span>
+                            </label>
+                            <input type="text" value="Thailand SEM"
+                                class="input input-bordered w-full focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-shadow" />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label pb-1.5 pt-0">
+                                <span class="label-text font-semibold text-slate-700">Description</span>
+                            </label>
+                            <textarea
+                                class="textarea textarea-bordered h-24 focus:outline-none focus:border-green-500 block focus:ring-1 focus:ring-green-500 transition-shadow text-base">SEM Lead</textarea>
+                        </div>
+                    </div>
+
+                    <div class="divider text-slate-300 my-2"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+
+                        <div class="form-control">
+                            <label class="label pb-1.5 pt-0">
+                                <span class="label-text font-semibold text-slate-700">Type</span>
+                            </label>
+                            <select
+                                class="select select-bordered w-full focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-shadow text-base">
+                                <optgroup label="Default">
+                                    <option>Select</option>
+                                </optgroup>
+                                <optgroup label="Google">
+                                    <option selected>SEM</option>
+                                    <option>Organic</option>
+                                    <option>YouTube</option>
+                                </optgroup>
+                                <optgroup label="Social Media">
+                                    <option>Facebook</option>
+                                    <option>Instagram</option>
+                                    <option>LinkedIn</option>
+                                </optgroup>
+                                <optgroup label="Mailer">
+                                    <option>Email Marketing</option>
+                                </optgroup>
+                                <optgroup label="WhatsApp">
+                                    <option>WhatsApp Campaign</option>
+                                    <option>WhatsApp Organic</option>
+                                </optgroup>
+                                <optgroup label="Offline">
+                                    <option>Inbound Call</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label pb-1.5 pt-0">
+                                <span class="label-text font-semibold text-slate-700">Destination</span>
+                            </label>
+                            <select
+                                class="select select-bordered w-full focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-shadow text-base">
+                                <option disabled>Select Destination</option>
+                                <option selected>Thailand</option>
+                                <option>Bhutan</option>
+                                <option>Dubai</option>
+                                <option>Vietnam</option>
+                                <option>Australia</option>
+                                <option>Bali</option>
+                                <option>Europe</option>
+                                <option>Singapore</option>
+                                <option>Kashmir</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label pb-1.5 pt-0">
+                                <span class="label-text font-semibold text-slate-700">Status</span>
+                            </label>
+                            <select
+                                class="select select-bordered w-full focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-shadow text-base">
+                                <option selected>Active</option>
+                                <option>Paused</option>
+                                <option>Completed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label pb-1.5 pt-0">
+                                <span class="label-text font-semibold text-slate-700">Source</span>
+                            </label>
+                            <input type="text" value="SEM"
+                                class="input input-bordered w-full focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-shadow" />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label pb-1.5 pt-0">
+                                <span class="label-text font-semibold text-slate-700">Start Date</span>
+                            </label>
+                            <input type="datetime-local" value="2025-06-21T12:00"
+                                class="input input-bordered w-full text-slate-700 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-shadow" />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label pb-1.5 pt-0">
+                                <span class="label-text font-semibold text-slate-700">End Date</span>
+                            </label>
+                            <input type="datetime-local" value="2100-12-31T12:00"
+                                class="input input-bordered w-full text-slate-700 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-shadow" />
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center justify-start gap-3 pt-6 mt-2 border-t border-slate-100">
+                        <button type="submit"
+                            class="btn bg-[#4cba14] hover:bg-[#3ea00f] text-white border-none px-6 text-base shadow-sm">
+                            Update Campaign
+                        </button>
+                        <a href="/campaigns"
+                            class="btn bg-slate-400 hover:bg-slate-500 text-white border-none px-6 text-base shadow-sm">
+                            Cancel
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

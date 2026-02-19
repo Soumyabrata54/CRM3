@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+
+
+</head>
+
+<body>
+    <div class="p-6 max-w-5xl mx-auto w-full space-y-6 text-base-content">
+    
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <div class="flex items-center gap-3">
+              
+                <h1 class="text-2xl font-bold text-slate-800">Thailand SEM</h1>
+                <span class="badge badge-success text-white font-bold gap-1 pl-1.5 pr-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span> Active
+                </span>
+            </div>
+            <p class="text-sm text-slate-500 mt-2 md:ml-12">Campaign ID: <span class="font-mono">#1</span></p>
+        </div>
+        
+     
+    </div>
+
+    <div class="stats stats-vertical md:stats-horizontal shadow-sm border border-slate-100 w-full bg-white rounded-2xl">
+        <div class="stat">
+            <div class="stat-figure text-indigo-500">
+                <span class="material-icons text-4xl bg-indigo-50 p-3 rounded-xl">groups</span>
+            </div>
+            <div class="stat-title text-slate-500 font-semibold">Total Leads</div>
+            <div class="stat-value text-indigo-600 text-4xl ho"><a href="./AllLeads.html">333</a></div>
+            <div class="stat-desc mt-1">
+               
+            </div>
+        </div>
+        
+        <div class="stat">
+            <div class="stat-figure text-orange-500">
+                <span class="material-icons text-4xl bg-orange-50 p-3 rounded-xl">calendar_month</span>
+            </div>
+            <div class="stat-title text-slate-500 font-semibold">Timeline</div>
+            <div class="stat-value text-slate-700 text-3xl">~6 Months</div>
+            <div class="stat-desc mt-1 text-slate-500 font-medium">Ends on Dec 31, 2100</div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl">
+            <div class="card-body p-6">
+                <h2 class="card-title text-base font-bold text-slate-800 border-b border-slate-100 pb-4 mb-2 flex items-center gap-2">
+                    <span class="material-icons text-slate-400">tune</span> Configuration
+                </h2>
+                
+                <div class="space-y-4 text-sm">
+                    <div class="flex justify-between items-center py-1">
+                        <span class="text-slate-500 font-medium">Campaign Type</span>
+                        <span class="badge badge-ghost font-semibold text-slate-700">SEM</span>
+                    </div>
+                    <div class="flex justify-between items-center py-1">
+                        <span class="text-slate-500 font-medium">Traffic Source</span>
+                        <span class="badge badge-ghost font-semibold text-slate-700">SEM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl">
+            <div class="card-body p-6">
+                <h2 class="card-title text-base font-bold text-slate-800 border-b border-slate-100 pb-4 mb-2 flex items-center gap-2">
+                    <span class="material-icons text-slate-400">schedule</span> Schedule Details
+                </h2>
+                
+                <div class="space-y-4 text-sm">
+                    <div class="flex justify-between items-center py-1">
+                        <span class="text-slate-500 font-medium">Start Date</span>
+                        <span class="font-semibold text-slate-700">21 Jun 2025, 12:00 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center py-1">
+                        <span class="text-slate-500 font-medium">End Date</span>
+                        <span class="font-semibold text-slate-700">31 Dec 2100, 12:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</body>
+
+</html>
