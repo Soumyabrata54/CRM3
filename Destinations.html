@@ -142,150 +142,228 @@
     </div>
 
     <!--Main Body-->
-    <div class="max-w-[99%] mx-auto bg-white shadow-lg rounded-xl mt-5 border border-gray-200 overflow-hidden">
+    <div
+        class="max-w-[99%] mx-auto mt-6 bg-white rounded-xl border border-slate-200 shadow-sm relative z-10 overflow-hidden">
 
-        <!--Header-->
         <div
-            class="p-3 border-b border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            class="px-6 py-4 flex flex-col xl:flex-row justify-between xl:items-center gap-4 border-b border-slate-200 bg-white relative z-30">
 
-            <div>
-                <h1 class="tittle text-black text-xl font-bold mb-2 xl:mb-0">Destinations</h1>
-                <p class="text-sm text-gray-500 mt-1">Manage travel destinations</p>
+            <div class="flex-shrink-0">
+                <h1 class="text-xl font-bold tracking-tight text-slate-800">Destinations</h1>
+                <p class="text-xs text-slate-500 mt-0.5">Manage travel destinations</p>
             </div>
 
-            <div class="flex gap-3">
-                <button class="btn  btn-disabled">
+            <div
+                class="flex flex-wrap items-center justify-end gap-2 w-full xl:w-auto overflow-x-auto pb-1 xl:pb-0">
+                <button class="btn btn-sm btn-disabled h-8 min-h-0 rounded-md px-4 font-medium text-xs flex-shrink-0">
                     Lead Costing
                 </button>
 
-                <!--Create Destination Modal-->
-                <!-- Open the modal using ID.showModal() method -->
-                <button class="btn  btn-soft btn-primary" onclick="my_modal_2.showModal()">Create New
-                    Destination</button>
+                <button class="btn btn-primary focus:outline-none focus:ring-0" onclick="create_destination.showModal()">
+                    Create Destination
+                </button>
             </div>
         </div>
 
-        <!--Table-->
-        <div class="p-0 m-3">
+        <!--Table Container-->
+        <div class="overflow-x-auto custom-scrollbar w-full rounded-b-xl relative z-10">
 
-            <!--Main table-->
-            <div class="overflow-x-auto">
+            <table class="table table-xs w-full">
+                <thead class="">
+                    <tr>
+                        <th>
+                            <div class="flex items-center gap-1">
+                                <span>#</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+                            </div>
+                        </th>
 
-                <table class="table table-xs w-full">
-                    <thead class="bg-gray-50 text-gray-600 uppercase  ">
-                        <tr>
-                            <th class="py-4 pl-6">#</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Status</th>
-                            <th>Created At</th>
-                            <th class="pr-6">Action</th>
-                        </tr>
-                    </thead>
+                        <th>
+                            <div class="flex items-center gap-1">
+                                <span>Name</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
 
-                    <tbody class=" text-gray-700 divide-y divide-gray-100">
+                            </div>
+                        </th>
 
-                        <tr class="hover:bg-gray-50 transition-colors w-11">
-                            <td class="pl-6 font-medium">1</td>
-                            <td class="font-bold text-md">Thailand</td>
-                            <td class="font-black text-black">--</td>
-                            <td><span class="badge badge-success text-white badge-sm font-bold">Active</span></td>
-                            <td class="font-bold text-md">04Feb 25 17:40</td>
-                            <td class="pr-6">
-                                <button class="btn btn-xs text-blue-600 border-none text-md"
-                                    onclick="edit_modal_thailand.showModal()">Edit</button>
-                            </td>
-                        </tr>
+                        <th>
+                            <div class="flex items-center gap-1">
+                                <span> Description</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="flex items-center gap-1">
+                                <span>Status</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="flex items-center gap-1">
+                                <span>Created At</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="flex items-center gap-1">
+                                <span>Action</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+                            </div>
+                        </th>
+
+
+                    </tr>
+
+                    <!--below column search fields-->
+                    <tr class="border-b border-slate-200">
+                        <th class="p-1"></th>
+
+                        <th class="p-1">
+                            <input type="text" class="input input-bordered input-xs " />
+                        </th>
+
+                        <th class="p-1">
+
+                        </th>
+
+                        <th class="p-1">
+                            <input type="text" class="input input-bordered input-xs " />
+                        </th>
+
+                        <th class="p-1">
+
+                        </th>
+
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr class="hover:bg-indigo-50/50  duration-200 text-sm border-b border-slate-100">
+
+
+                        <td class="">
+                            <a class="font-semibold text-primary hover:underline" href="./notify.html"
+                                target="_blank">1</a>
+                        </td>
+
+
+
+                        <td class="">
+                            <div class=" text-grey-400"> Thailand</div>
+                        </td>
+
+                        <td class="">
+                            <div class="text-xm ">--</div>
+                        </td>
 
 
 
 
+                        <td class="">
+                            <div class="badge badge-outline badge-success">Active</div>
+                        </td>
 
-                    </tbody>
-                </table>
 
-            </div>
 
-            <div class="flex justify-between items-center p-4 border-t border-gray-100">
-                <span class="text-xs text-gray-500">Showing 1 to 10 of 10 entries</span>
-                <div class="join">
-                    <button class="join-item btn btn-sm btn-outline">Previous</button>
+                        <td class="">04Apr 26 9:44pm</td>
 
-                    <button class="join-item btn btn-sm btn-outline">Next</button>
-                </div>
-            </div>
+                        <td class="">
+                            <button class="btn btn-md btn-ghost border-none" onclick="edit_modal.showModal()">Edit</button>
+                        </td>
+
+
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
 
         </div>
+
+
 
     </div>
 
+    <dialog id="create_destination" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box w-11/12 max-w-md bg-white p-0 rounded-xl shadow-2xl">
 
-    <dialog id="my_modal_2" class="modal">
-        <div class="modal-box p-0 max-w-4xl">
-            <div class="card w-full bg-base-100">
-                <div class="card-body">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-slate-100">
+                <h3 class="font-bold text-lg text-slate-800">Create New Destination</h3>
+                <form method="dialog">
+                    <button
+                        class="btn btn-sm btn-circle btn-ghost text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none">✕</button>
+                </form>
+            </div>
 
-                    <div class="flex justify-between items-center">
-                        <h2 class="card-title text-xl font-bold text-gray-700">Create New Destination</h2>
-                        <form method="dialog">
-                            <button class="btn btn-sm btn-circle btn-ghost text-gray-500 hover:bg-gray-100">✕</button>
-                        </form>
-                    </div>
+            <div class="p-6 space-y-5">
 
-                    <div class="divider mt-0 mb-4"></div>
-
-                    <form class="space-y-4">
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                            <div class="form-control w-full">
-                                <label class="label">
-                                    <span class="label-text font-semibold text-gray-600">Destination Name</span>
-                                </label>
-                                <input type="text" placeholder="Enter destination name"
-                                    class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
-                            </div>
-
-                            <div class="form-control w-full">
-                                <label class="label">
-                                    <span class="label-text font-semibold text-gray-600">Description</span>
-                                </label>
-                                <input type="text" placeholder="Write a short description..."
-                                    class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="form-control w-full">
-                                <label class="label">
-                                    <span class="label-text font-semibold text-gray-600">Status</span>
-                                </label>
-                                <select
-                                    class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
-                                    <option disabled selected>Select Status</option>
-                                    <option value="active">Active</option>
-                                    <option value="inactive">Inactive</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="card-actions justify-start pt-4">
-                            <button type="submit"
-                                class="btn bg-indigo-500 hover:bg-indigo-600 text-white border-none w-32">
-                                Submit
-                            </button>
-                        </div>
-
-                    </form>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Destination Name</label>
+                    <input type="text" placeholder="Enter destination name"
+                        class="input input-bordered w-full h-10 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md placeholder:text-slate-400" />
                 </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Description</label>
+                    <textarea placeholder="Write a short description..."
+                        class="textarea textarea-bordered w-full border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md resize-none h-24 placeholder:text-slate-400 text-sm leading-relaxed"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Status</label>
+                    <select
+                        class="select select-bordered w-full h-10 min-h-0 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md">
+                        <option selected>Inactive</option>
+                        <option>Active</option>
+                    </select>
+                </div>
+
+                <div class="pt-2">
+                    <button
+                        class="btn bg-indigo-500 hover:bg-indigo-600 text-white border-none px-8 min-h-0 h-10 font-medium tracking-wide">Submit</button>
+                </div>
+
             </div>
         </div>
+
         <form method="dialog" class="modal-backdrop">
             <button>close</button>
         </form>
     </dialog>
 
-    <dialog id="edit_modal_thailand" class="modal">
+    <dialog id="edit_modal" class="modal">
         <div class="modal-box">
             <h3 class="font-bold text-lg mb-6 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

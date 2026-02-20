@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+
+</head>
+
+<body class="bg-[#f2f2f2] min-h-screen">
+    <!--Navbar-->
+    <div class="navbar bg-white sticky top-0 z-40 shadow-sm border-b border-slate-200">
+        <div class="flex-1 flex items-center gap-4 lg:gap-8">
+
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                    <span class="material-icons">menu</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="./Campaigns.html">Campaigns</a></li>
+                    <li><a href="./AdminDashboard.html">AdminDashboard</a></li>
+                    <li><a href="./AllLeads.html">All Leads</a></li>
+                    <li><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                    <li><a href="./MyLeads.html">My Leads</a></li>
+                    <li>
+                        <details>
+                            <summary>Settings</summary>
+                            <ul>
+                                <li><a href="./Destinations.html">Destinations</a></li>
+                                <li><a href="./Users.html">Users</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+
+            <a class="font-bold text-2xl">CRM</a>
+
+            <ul class="menu menu-horizontal hidden lg:flex px-1 gap-2 items-center">
+
+                <li class="text-md font-bold"><a href="./AdminDashboard.html">AdminDashboard</a></li>
+                <li class="text-md font-bold"><a href="./AllLeads.html">All Leads</a></li>
+                <li class="text-md font-bold"><a href="./FollowUpLeads.html">Follow Up Leads</a></li>
+                <li class="text-md font-bold"><a href="./MyLeads.html">My Leads</a></li>
+                <li class="text-md font-bold"><a href="./VerifiedLeads.html">Verified Leads</a></li>
+                <li class="text-md font-bold"><a href="./Campaigns.html">Campaigns</a></li>
+                <li class="dropdown dropdown-end">
+                    <div tabindex="0" role="button"
+                        class="text-md font-bold active:bg-neutral-focus flex items-center gap-1">
+                        Settings
+                        <span class="material-icons text-sm opacity-50">expand_more</span>
+                    </div>
+                    <ul tabindex="0"
+                        class="dropdown-content top-7 menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow-lg mt-4">
+                        <li><a href="./Destinations.html">Destinations</a></li>
+                        <li><a href="./Users.html">Users</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex-none flex items-center gap-2 lg:gap-4">
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">mail</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
+                    <li class="menu-title">Messages</li>
+                    <li><a>New lead from Rahul</a></li>
+                    <li><a>Follow-up reminder</a></li>
+                    <li><a>View all messages</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle indicator">
+                    <span class="material-icons">notifications</span>
+
+                </label>
+
+                <div tabindex="0"
+                    class="dropdown-content z-[1] mt-3 p-0 shadow-lg bg-base-100 rounded-lg w-80 md:w-96 border border-slate-100 overflow-hidden">
+
+                    <div class="flex items-center justify-between px-4 py-3 border-b border-slate-100 bg-white">
+                        <span class="font-bold text-slate-700">Notifications</span>
+                        <button class="text-xs text-indigo-600 font-semibold hover:text-indigo-800 hover:underline">Mark
+                            all as
+                            read</button>
+                    </div>
+
+                    <!--Notifivation Dropdown  Items-->
+                    <ul class="menu menu-sm max-h-[70vh] overflow-y-auto flex-nowrap p-0">
+
+                        <li class="border-b border-slate-50 hover:bg-slate-300 last:border-none">
+                            <a href="./notify.html"
+                                class="flex items-start gap-3 py-3 px-4 rounded-none  active:bg-slate-100">
+                                <div
+                                    class="flex-none w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center mt-1">
+                                    <span class="material-icons text-sm">info</span>
+                                </div>
+                                <div class="flex flex-col gap-0.5">
+                                    <span class="font-bold text-xs text-slate-700">New Lead Created</span>
+                                    <span class="text-xs text-slate-500 leading-snug">A new lead has been created: Akash
+                                        (16736)</span>
+                                    <span class="text-[10px] text-slate-400 mt-0.5">Just now</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                    <span class="material-icons">account_circle</span>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">Soumyabrata</li>
+                    <li><a>Profile</a></li>
+                    <li><a>Settings</a></li>
+                    <li><a class="text-error" onclick="logout_modal.showModal()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-[99%] mx-auto mt-6 bg-white rounded-xl border border-slate-200 shadow-sm relative">
+
+        <div class="bg-white rounded-lg shadow-sm border border-slate-200">
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 border-b border-slate-200">
+                <div>
+                    <h1 class="text-xl font-bold text-slate-800">Permissions</h1>
+                    <p class="text-sm text-slate-500 mt-1">Permission in the application</p>
+                </div>
+
+                <div class="flex mt-4 md:mt-0">
+                    <button class="btn btn-primary rounded font-medium px-6">
+                        Create New Permission
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-4 border-b border-slate-200 bg-slate-50/50 flex flex-wrap gap-3 items-center justify-end">
+
+                <input type="text" placeholder="Search permissions..."
+                    class="input input-sm input-bordered w-full md:w-64 bg-white focus:outline-none focus:border-primary" />
+
+                <!--Calender Container-->
+                <div class="">
+                    <div class="dropdown dropdown-end w-full">
+                        <div tabindex="0" role="button"
+                            class="btn btn-outline border-slate-300 w-full justify-start font-normal normal-case h-10 min-h-0">
+                            <span class="material-icons text-sm mr-2 text-slate-400">calendar_month</span>
+                            <span class="text-sm">05Apr 25</span>
+                        </div>
+
+                        <div tabindex="0"
+                            class="dropdown-content z-[100] mt-2 p-4 shadow-2xl bg-white rounded-xl border border-slate-100">
+
+                            <!--Calender-->
+                            <calendar-date style="--color-accent: #4f46e5; width: 100%;"
+                                onchange="selectDate('departure-input', 'departure-calendar', event)">
+                                <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd"
+                                        d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd"
+                                        d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <calendar-month></calendar-month>
+                            </calendar-date>
+
+                        </div>
+
+
+                    </div>
+                </div>
+             
+
+                <button class="btn btn-sm btn-primary btn-soft px-6">
+                    Search
+                </button>
+
+            </div>
+
+            <div class="overflow-x-auto custom-scrollbar w-full rounded-b-xl relative z-10 p-2 md:p-4">
+                <table class="table table-xs w-full">
+
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="flex items-center gap-1">
+                                    <span>#</span>
+                                    <button class="btn btn-ghost btn-xs p-0 h-4 min-h-0" data-key="id"
+                                        aria-label="Sort #">
+                                        <span class="material-icons text-xl leading-none opacity-60">unfold_more</span>
+                                    </button>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="flex items-center gap-1">
+                                    <span>Name</span>
+                                    <button
+                                        class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                        aria-label="Sort Name">
+                                        <span
+                                            class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                    </button>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="flex items-center gap-1">
+                                    <span>Guard Name</span>
+                                    <button
+                                        class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                        aria-label="Sort Guard Name">
+                                        <span
+                                            class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                    </button>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="flex items-center gap-1">
+                                    <span>Created At</span>
+                                    <button
+                                        class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                        aria-label="Sort Date">
+                                        <span
+                                            class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                    </button>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="flex items-center gap-1">
+                                    <span>Action</span>
+                                </div>
+                            </th>
+                        </tr>
+
+                        <tr class="border-b border-slate-200">
+                            <th class="p-1"></th>
+                            <th class="p-1">
+                                <input type="text" placeholder="Search Name..."
+                                    class="input input-bordered input-xs w-full border border-base-300 bg-base-100 focus:border-primary font-normal" />
+                            </th>
+                            <th class="p-1">
+                                <input type="text" placeholder="Search Guard..."
+                                    class="input input-bordered input-xs w-full border border-base-300 bg-base-100 focus:border-primary font-normal" />
+                            </th>
+                            <th class="p-1">
+                                <input type="text" placeholder="Search Date..."
+                                    class="input input-bordered input-xs w-full border border-base-300 bg-base-100 focus:border-primary font-normal" />
+                            </th>
+                            <th class="p-1"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                            <th class="text-left text-xs opacity-60 align-middle">1</th>
+                            <td class="align-middle text-slate-700">lead show_phone_number</td>
+                            <td class="align-middle text-slate-600">web</td>
+                            <td class="align-middle text-slate-600">17-05-2025 09:42:05</td>
+                            <td class="align-middle">
+                                <a href="#"
+                                    class="font-medium text-slate-600 hover:text-primary transition-colors">Edit</a>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                            <th class="text-left text-xs opacity-60 align-middle">2</th>
+                            <td class="align-middle text-slate-700">lead show_email</td>
+                            <td class="align-middle text-slate-600">web</td>
+                            <td class="align-middle text-slate-600">17-05-2025 09:42:05</td>
+                            <td class="align-middle">
+                                <a href="#"
+                                    class="font-medium text-slate-600 hover:text-primary transition-colors">Edit</a>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                            <th class="text-left text-xs opacity-60 align-middle">3</th>
+                            <td class="align-middle text-slate-700">lead assign_to_me</td>
+                            <td class="align-middle text-slate-600">web</td>
+                            <td class="align-middle text-slate-600">17-05-2025 09:42:05</td>
+                            <td class="align-middle">
+                                <a href="#"
+                                    class="font-medium text-slate-600 hover:text-primary transition-colors">Edit</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

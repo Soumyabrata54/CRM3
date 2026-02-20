@@ -143,313 +143,496 @@
 
 
     <!--Main Body-->
-    <div class=" mx-auto mt-6 max-w-[99%] bg-white shadow-xl rounded-xl border border-gray-200 overflow-hidden">
-        <!--header-->
-        <div class="p-6 border-b border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="max-w-[99%] mx-auto mt-6 bg-white rounded-xl border border-slate-200 shadow-sm relative">
 
-            <div class="w-full md:w-auto">
-                <h1 class="tittle text-black text-xl font-bold mb-2 xl:mb-0">Campaigns</h1>
-                <p class="text-sm text-gray-500 mt-1">Campaign List in the application</p>
+        <div
+            class="px-6 py-5 flex flex-col xl:flex-row justify-between xl:items-center gap-4 border-b border-slate-200 bg-white relative z-30 rounded-t-xl">
+
+            <div class="flex items-center">
+                <h1 class="text-xl font-bold tracking-tight text-center text-slate-800">Campaigns</h1>
             </div>
 
-            <div class="w-full md:w-auto flex justify-end">
-                <button class="btn  btn-soft btn-primary" onclick="create_campaign_modal.showModal()">Create New
-                    Campaign</button>
+            <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto">
 
-                <dialog id="create_campaign_modal" class="modal">
-                    <div class="modal-box w-11/12 max-w-4xl p-0 overflow-visible rounded-md">
+                <div class="w-full sm:w-[200px] md:flex-grow lg:flex-grow-0 relative">
+                    <span
+                        class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+                    <input type="text" placeholder="Search Campaigns..."
+                        class="input input-bordered w-full pl-10 h-10 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-sm font-normal rounded-lg placeholder:text-slate-400 shadow-sm" />
+                </div>
 
-                        <div class="flex justify-between items-center border-b border-gray-200 p-6">
-                            <h2 class="text-xl font-bold text-gray-700">Create New Campaign</h2>
-                            <form method="dialog">
-                                <button class="btn btn-sm btn-circle btn-ghost text-gray-400 text-lg">✕</button>
-                            </form>
+                <div class="w-full sm:w-auto flex-1 min-w-[140px] max-w-[200px]">
+                    <select
+                        class="select select-bordered w-full h-10 min-h-0 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-sm font-normal text-slate-600 rounded-lg shadow-sm">
+                        <option disabled selected>Campaign Type</option>
+                        <option>SEM</option>
+                        <option>Organic</option>
+                        <option>Social Media</option>
+                        <option>Email Marketing</option>
+                        <option>WhatsApp</option>
+                    </select>
+                </div>
+
+                <div class="w-full sm:w-auto flex-1 min-w-[140px] max-w-[200px]">
+                    <select
+                        class="select select-bordered w-full h-10 min-h-0 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-sm font-normal text-slate-600 rounded-lg shadow-sm">
+                        <option disabled selected>Status</option>
+                        <option>Active</option>
+                        <option>Paused</option>
+                        <option>Draft</option>
+                        <option>Completed</option>
+                    </select>
+                </div>
+
+                <div class="w-full sm:w-auto flex-1 min-w-[140px] max-w-[200px]">
+                    <select
+                        class="select select-bordered w-full h-10 min-h-0 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-sm font-normal text-slate-600 rounded-lg shadow-sm">
+                        <option disabled selected>Destination</option>
+                        <option>Thailand</option>
+                        <option>Dubai</option>
+                        <option>Vietnam</option>
+                        <option>Bali</option>
+                        <option>Europe</option>
+                    </select>
+                </div>
+                <!--Calender Container-->
+                <div class="">
+                    <div class="dropdown dropdown-end w-full">
+
+                        <div tabindex="0" role="button"
+                            class="btn bg-white border-slate-300 hover:bg-slate-50 hover:border-slate-400 text-slate-600 font-normal w-full justify-start h-10 min-h-0 rounded-lg px-4 flex items-center shadow-sm">
+                            <span class="material-icons text-[18px] mr-2 text-slate-400">calendar_month</span>
+                            <span class="text-sm">06-02-2026 to 13-02-2026</span>
                         </div>
 
-                        <div class="p-6 overflow-visible">
-                            <form class="space-y-6">
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div class="form-control w-full">
-                                        <label class="label"><span
-                                                class="label-text font-semibold text-gray-600">Campaign
-                                                Name</span></label>
-                                        <input type="text" placeholder="Enter campaign name"
-                                            class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
-                                    </div>
-                                    <div class="form-control w-full">
-                                        <label class="label"><span
-                                                class="label-text font-semibold text-gray-600">Description</span></label>
-                                        <input type="text" placeholder="Write a short description..."
-                                            class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <div class="form-control w-full">
-                                        <label class="label"><span
-                                                class="label-text font-semibold text-gray-600">Type</span></label>
-                                        <select
-                                            class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
-                                            <option selected>NA</option>
-                                            <optgroup label="Google">
-                                                <option>SEM</option>
-                                                <option>Organic</option>
-                                                <option>YouTube</option>
-                                            </optgroup>
-                                            <optgroup label="Social Media">
-                                                <option>Facebook</option>
-                                                <option>Instagram</option>
-                                                <option>LinkedIn</option>
-                                            </optgroup>
-                                            <optgroup label="Mailer">
-                                                <option>Email Marketing</option>
-                                            </optgroup>
-                                            <optgroup label="WhatsApp">
-                                                <option>WhatsApp Campaign</option>
-                                                <option>WhatsApp Organic</option>
-                                            </optgroup>
-                                            <optgroup label="Offline">
-                                                <option>Inbound Call</option>
-                                                <option>Expert Generated</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-control w-full">
-                                        <label class="label"><span
-                                                class="label-text font-semibold text-gray-600">Destination</span></label>
-                                        <select
-                                            class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
-                                            <option disabled selected>Select Destination</option>
-                                            <option>Thailand</option>
-                                            <option>Bhutan</option>
-                                            <option>Dubai</option>
-                                            <option>Vietnam</option>
-                                            <option>Australia</option>
-                                            <option>Bali</option>
-                                            <option>Europe</option>
-                                            <option>Singapore</option>
-                                            <option>Kashmir</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-control w-full">
-                                        <label class="label"><span
-                                                class="label-text font-semibold text-gray-600">Status</span></label>
-                                        <select
-                                            class="select select-bordered w-full focus:outline-none focus:border-indigo-500 font-normal text-base">
-                                            <option disabled selected>Select Status</option>
-                                            <option>Draft</option>
-                                            <option>Active</option>
-                                            <option>Paused</option>
-                                            <option>Completed</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div class="form-control">
-                                        <label class="label"><span class="label-text font-semibold text-gray-600">Start
-                                                Date</span></label>
-                                        <div class="flex gap-2 relative group-date-picker">
-                                            <div class="w-full relative">
-                                                <input type="text" id="startDate" placeholder="YYYY-MM-DD"
-                                                    class="input input-bordered w-full cursor-pointer focus:outline-none"
-                                                    readonly />
-                                                <div id="startCalendar"
-                                                    class="absolute top-0 left-0 z-[60] shadow-2xl border border-gray-200 rounded-lg hidden bg-white p-2">
-                                                    <!--Calender-->
-                                                    <calendar-date style="--color-accent: #4f46e5; width: 100%;"
-                                                        onchange="selectDate('departure-input', 'departure-calendar', event)">
-                                                        <svg aria-label="Previous" slot="previous"
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-6 h-6">
-                                                            <path fill-rule="evenodd"
-                                                                d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                        <svg aria-label="Next" slot="next"
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-6 h-6">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                        <calendar-month></calendar-month>
-                                                    </calendar-date>
-
-                                                </div>
-                                            </div>
-                                            <input type="time"
-                                                class="input input-bordered focus:outline-none focus:border-indigo-500" />
-                                        </div>
-                                    </div>
-
-                                    <div class="form-control">
-                                        <label class="label"><span class="label-text font-semibold text-gray-600">End
-                                                Date</span></label>
-                                        <div class="flex gap-2 relative group-date-picker">
-                                            <div class="w-full relative">
-                                                <input type="text" id="endDate" placeholder="YYYY-MM-DD"
-                                                    class="input input-bordered w-full cursor-pointer focus:outline-none"
-                                                    readonly />
-                                                <div id="endCalendar"
-                                                    class="absolute top-0 left-0 z-[60] shadow-2xl border border-gray-200 rounded-lg hidden bg-white p-2">
-
-                                                    <!--Calender-->
-                                                    <calendar-date style="--color-accent: #4f46e5; width: 100%;"
-                                                        onchange="selectDate('departure-input', 'departure-calendar', event)">
-                                                        <svg aria-label="Previous" slot="previous"
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-6 h-6">
-                                                            <path fill-rule="evenodd"
-                                                                d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                        <svg aria-label="Next" slot="next"
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-6 h-6">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                        <calendar-month></calendar-month>
-                                                    </calendar-date>
-
-                                                </div>
-                                            </div>
-                                            <input type="time"
-                                                class="input input-bordered focus:outline-none focus:border-indigo-500" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-control w-full">
-                                    <label class="label"><span class="label-text font-semibold text-gray-600">Source
-                                            (optional)</span></label>
-                                    <input type="text"
-                                        class="input input-bordered w-full focus:outline-none focus:border-indigo-500" />
-                                </div>
-
-                                <div class="flex gap-3 justify-start pt-4">
-                                    <button type="button"
-                                        class="btn bg-[#48c708] hover:bg-[#3da807] text-white border-none px-6 shadow-md">
-                                        Create Campaign
-                                    </button>
-                                    <form method="dialog">
-                                        <button class="btn btn-ghost">Cancel</button>
-                                    </form>
-                                </div>
-
-                            </form>
+                        <div tabindex="0"
+                            class="dropdown-content z-[100] mt-2 p-4 shadow-xl bg-white rounded-2xl border border-slate-200">
+                            <calendar-range style="--color-accent: #6366f1; width: 100%;"
+                                onchange="selectDate('departure-input', 'departure-calendar', event)">
+                                <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-slate-600">
+                                    <path fill-rule="evenodd"
+                                        d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-slate-600">
+                                    <path fill-rule="evenodd"
+                                        d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <calendar-month></calendar-month>
+                            </calendar-range>
                         </div>
+
                     </div>
-                    <form method="dialog" class="modal-backdrop">
-                        <button>close</button>
-                    </form>
-                </dialog>
+                </div>
 
+                <button class="btn btn-soft btn-primary ">
+                    Search
+                </button>
+
+                <button class="btn btn-soft btn-primary" onclick="campaign.showModal()">Create New Campaign</button>
 
             </div>
         </div>
 
-        <!--table-->
-        <div class="p-0">
-            <div class="overflow-x-auto">
+        <div class="overflow-x-auto custom-scrollbar w-full relative z-10">
 
-                <table class="table table-xs w-full">
-                    <thead class="bg-white text-gray-600 font-semibold text-xs uppercase">
-                        <tr>
-                            <th class="py-4 pl-6">Campaign Id</th>
-                            <th>Name</th>
-                            <th>Destinations</th>
-                            <th>Type</th>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th class="pr-6">Actions</th>
-                        </tr>
-                    </thead>
+            <table class="table table-xs w-full">
+                <thead class=" ">
 
-                    <tbody class="text-sm text-white divide-y divide-gray-100">
-                        <tr
-                            class="hover:bg-indigo-50/30 transition-colors duration-200 group border-b border-gray-100 last:border-none">
+                    <tr class="text-xs uppercase tracking-wider">
 
-                            <td class="pl-6  whitespace-nowrap">
-                                <span class="font-mono text-xs font-medium text-gray-800">#1</span>
-                            </td>
 
-                            <td class="">
-                                <div class=" font-medium text-slate-600 text-sm">Thailand SEM</div>
-                            </td>
-
-                            <td class="">
-                                <div class="flex items-center gap-1 text-slate-600 text-sm font-medium">
-                                    <span class="material-icons text-[16px] text-slate-400">place</span>
-                                    Thailand
-                                </div>
-                            </td>
-
-                            <td class="">
-                                <span
-                                    class="badge badge-sm badge-ghost font-semibold text-xs text-slate-500 border-slate-200">SEM</span>
-                            </td>
-
-                            <td class="">
-                                <span class="badge badge-sm badge-success text-white font-bold gap-1 pl-1.5 pr-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
-                                    Active
-                                </span>
-                            </td>
-
-                            <td class="">
-                                <span class="text-md font-bold text-slate-700 whitespace-nowrap">21 Jun 25 - 31 Dec
-                                    25</span>
-                            </td>
-
-                            <td class="">
+                        <th class=" border-b border-slate-200">
+                            <div class="flex items-center gap-1 whitespace-nowrap">
+                                <span>Campaign ID</span>
                                 <button
-                                    class="btn btn-xs btn-square btn-ghost text-slate-500 hover:bg-slate-100 opacity-80 group-hover:opacity-100 transition-opacity"
-                                    popovertarget="action-popover-1" style="anchor-name:--action-anchor-1">
-                                    <span class="material-icons text-[20px]">more_vert</span>
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
                                 </button>
 
-                                <ul class="dropdown menu p-2 shadow-lg bg-base-100 rounded-box w-36 border border-slate-100 mt-1"
-                                    popover id="action-popover-1" style="position-anchor:--action-anchor-1">
-                                    <li>
-                                        <a href="./CampaignsView.html">
-                                            View
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="./CampaignsEdit.html">
-                                            Edit
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a onclick="delete_modal_1.showModal()">
-                                            Delete
-                                        </a>
-                                    </li>
-                                </ul>
-                            </td>
+                            </div>
+                        </th>
 
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                        <th class=" border-b border-slate-200">
+                            <div class="flex items-center gap-1">
+                                <span>Name</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
 
-            <!--Previous and Next Button-->
-            <div class="flex justify-between items-center p-4 border-t border-gray-100">
-                <span class="text-xs text-gray-500">Showing 1 to 9 of 15 entries</span>
-                <div class="join">
-                    <button class="join-item btn btn-sm btn-outline">Previous</button>
-                    <button
-                        class="join-item btn btn-sm btn-active bg-indigo-600 text-white border-indigo-600">1</button>
-                    <button class="join-item btn btn-sm btn-outline">Next</button>
-                </div>
-            </div>
+                            </div>
+                        </th>
 
+                        <th class=" border-b border-slate-200">
+                            <div class="flex items-center gap-1">
+                                <span>Destinations</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+
+                            </div>
+                        </th>
+
+                        <th class=" border-b border-slate-200">
+                            <div class="flex items-center gap-1">
+                                <span>Type</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+
+                            </div>
+                        </th>
+
+                        <th class=" border-b border-slate-200">
+                            <div class="flex items-center gap-1">
+                                <span>Status</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+
+                            </div>
+                        </th>
+
+                        <th class=" border-b border-slate-200">
+                            <div class="flex items-center gap-1 whitespace-nowrap">
+                                <span>Date</span>
+                                <button
+                                    class="btn btn-ghost btn-xs p-0 h-4 w-4 min-h-0 flex items-center justify-center"
+                                    data-key="created" data-dir="none" aria-label="Sort Created Date">
+                                    <span class="material-icons !text-[14px] leading-none opacity-60">unfold_more</span>
+                                </button>
+
+                            </div>
+                        </th>
+
+                        <th class="border-b border-slate-200">
+                            <div class="flex items-center gap-1">
+                                <span>Actions</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr class="bg-slate-50/50 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                        <th class="p-2 border-b border-slate-200"></th>
+
+                        <th class="p-2 border-b border-slate-200">
+                            <input type="text" placeholder="Search ID..."
+                                class="input input-bordered input-xs w-full min-w-[90px] border border-base-300 bg-base-100 focus:border-primary font-normal rounded-md" />
+                        </th>
+
+                        <th class="p-2 border-b border-slate-200">
+                            <input type="text" placeholder="Search Name..."
+                                class="input input-bordered input-xs w-full min-w-[120px] border border-base-300 bg-base-100 focus:border-primary font-normal rounded-md" />
+                        </th>
+
+                        <th class="p-2 border-b border-slate-200">
+                            <input type="text" placeholder="Destinations..."
+                                class="input input-bordered input-xs w-full min-w-[100px] border border-base-300 bg-base-100 focus:border-primary font-normal rounded-md" />
+                        </th>
+
+                        <th class="p-2 border-b border-slate-200">
+                            <input type="text" placeholder="Type..."
+                                class="input input-bordered input-xs w-full min-w-[80px] border border-base-300 bg-base-100 focus:border-primary font-normal rounded-md" />
+                        </th>
+
+                        <th class="p-2 border-b border-slate-200">
+                            <input type="text" placeholder="Status..."
+                                class="input input-bordered input-xs w-full min-w-[80px] border border-base-300 bg-base-100 focus:border-primary font-normal rounded-md" />
+                        </th>
+
+                        <th class="p-2 border-b border-slate-200">
+                            <input type="text" placeholder="Date..."
+                                class="input input-bordered input-xs w-full min-w-[120px] border border-base-300 bg-base-100 focus:border-primary font-normal rounded-md" />
+                        </th>
+
+                        <th class="p-2 border-b border-slate-200"></th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                        <th class="text-center text-xs opacity-60 px-4 py-3">1</th>
+
+                        <td class="">
+                            <a class="font-bold  hover:underline font-mono text-xs whitespace-nowrap">Thailand Sem</a>
+                        </td>
+
+
+                        <td class="">
+                            <div class="flex items-center gap-1 text-slate-600 font-medium">
+
+                                Thailand
+                            </div>
+                        </td>
+
+                        <td class="">
+                            <span
+                                class="badge badge-sm badge-ghost font-bold text-xs text-slate-600 bg-slate-200/50 border-0">SEM</span>
+                        </td>
+
+                        <td class="">
+                            <div class="badge badge-success badge-sm badge-outline">Success</div>
+                        </td>
+
+                        <td class="whitespace-nowrap text-slate-600 font-medium">
+                            21Jun 25 - 31Dec 25
+                        </td>
+
+                        <td class="">
+                            <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+                            <button class="btn btn-xs border-none" popovertarget="popover-11"
+                                style="anchor-name:--anchor-11">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+                            <ul class="dropdown menu w-40 rounded-box bg-base-100 shadow-sm" popover id="popover-11"
+                                style="position-anchor:--anchor-11">
+                                <li><a href="./CampaignsView.html">View</a></li>
+                                <li><a href="./CampaignsEdit.html">Edit</a></li>
+                                <li><a onclick="delete_modal_1.showModal()">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                        <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                        <th class="text-center text-xs opacity-60 px-4 py-3">1</th>
+
+                        <td class="">
+                            <a class="font-bold  hover:underline font-mono text-xs whitespace-nowrap">Thailand Sem</a>
+                        </td>
+
+
+                        <td class="">
+                            <div class="flex items-center gap-1 text-slate-600 font-medium">
+
+                                Thailand
+                            </div>
+                        </td>
+
+                        <td class="">
+                            <span
+                                class="badge badge-sm badge-ghost font-bold text-xs text-slate-600 bg-slate-200/50 border-0">SEM</span>
+                        </td>
+
+                        <td class="">
+                            <div class="badge badge-success badge-sm badge-outline">Success</div>
+                        </td>
+
+                        <td class="whitespace-nowrap text-slate-600 font-medium">
+                            21Jun 25 - 31Dec 25
+                        </td>
+
+                        <td class="">
+                            <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+                            <button class="btn btn-xs border-none" popovertarget="popover-1"
+                                style="anchor-name:--anchor-1">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+                            <ul class="dropdown menu w-40 rounded-box bg-base-100 shadow-sm" popover id="popover-1"
+                                style="position-anchor:--anchor-1">
+                                <li><a href="./CampaignsView.html">View</a></li>
+                                <li><a href="./CampaignsEdit.html">Edit</a></li>
+                                <li><a onclick="delete_modal_1.showModal()">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                        <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                        <th class="text-center text-xs opacity-60 px-4 py-3">1</th>
+
+                        <td class="">
+                            <a class="font-bold  hover:underline font-mono text-xs whitespace-nowrap">Thailand Sem</a>
+                        </td>
+
+
+                        <td class="">
+                            <div class="flex items-center gap-1 text-slate-600 font-medium">
+
+                                Thailand
+                            </div>
+                        </td>
+
+                        <td class="">
+                            <span
+                                class="badge badge-sm badge-ghost font-bold text-xs text-slate-600 bg-slate-200/50 border-0">SEM</span>
+                        </td>
+
+                        <td class="">
+                            <div class="badge badge-success badge-sm badge-outline">Success</div>
+                        </td>
+
+                        <td class="whitespace-nowrap text-slate-600 font-medium">
+                            21Jun 25 - 31Dec 25
+                        </td>
+
+                        <td class="">
+                            <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+                            <button class="btn btn-xs border-none" popovertarget="popover-1"
+                                style="anchor-name:--anchor-1">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+                            <ul class="dropdown menu w-40 rounded-box bg-base-100 shadow-sm" popover id="popover-1"
+                                style="position-anchor:--anchor-1">
+                                <li><a href="./CampaignsView.html">View</a></li>
+                                <li><a href="./CampaignsEdit.html">Edit</a></li>
+                                <li><a onclick="delete_modal_1.showModal()">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                        <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                        <th class="text-center text-xs opacity-60 px-4 py-3">1</th>
+
+                        <td class="">
+                            <a class="font-bold  hover:underline font-mono text-xs whitespace-nowrap">Thailand Sem</a>
+                        </td>
+
+
+                        <td class="">
+                            <div class="flex items-center gap-1 text-slate-600 font-medium">
+
+                                Thailand
+                            </div>
+                        </td>
+
+                        <td class="">
+                            <span
+                                class="badge badge-sm badge-ghost font-bold text-xs text-slate-600 bg-slate-200/50 border-0">SEM</span>
+                        </td>
+
+                        <td class="">
+                            <div class="badge badge-success badge-sm badge-outline">Success</div>
+                        </td>
+
+                        <td class="whitespace-nowrap text-slate-600 font-medium">
+                            21Jun 25 - 31Dec 25
+                        </td>
+
+                        <td class="">
+                            <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+                            <button class="btn btn-xs border-none" popovertarget="popover-1"
+                                style="anchor-name:--anchor-1">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+                            <ul class="dropdown menu w-40 rounded-box bg-base-100 shadow-sm" popover id="popover-1"
+                                style="position-anchor:--anchor-1">
+                                <li><a href="./CampaignsView.html">View</a></li>
+                                <li><a href="./CampaignsEdit.html">Edit</a></li>
+                                <li><a onclick="delete_modal_1.showModal()">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                        <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                        <th class="text-center text-xs opacity-60 px-4 py-3">1</th>
+
+                        <td class="">
+                            <a class="font-bold  hover:underline font-mono text-xs whitespace-nowrap">Thailand Sem</a>
+                        </td>
+
+
+                        <td class="">
+                            <div class="flex items-center gap-1 text-slate-600 font-medium">
+
+                                Thailand
+                            </div>
+                        </td>
+
+                        <td class="">
+                            <span
+                                class="badge badge-sm badge-ghost font-bold text-xs text-slate-600 bg-slate-200/50 border-0">SEM</span>
+                        </td>
+
+                        <td class="">
+                            <div class="badge badge-success badge-sm badge-outline">Success</div>
+                        </td>
+
+                        <td class="whitespace-nowrap text-slate-600 font-medium">
+                            21Jun 25 - 31Dec 25
+                        </td>
+
+                        <td class="">
+                            <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+                            <button class="btn btn-xs border-none" popovertarget="popover-1"
+                                style="anchor-name:--anchor-1">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+                            <ul class="dropdown menu w-40 rounded-box bg-base-100 shadow-sm" popover id="popover-1"
+                                style="position-anchor:--anchor-1">
+                                <li><a href="./CampaignsView.html">View</a></li>
+                                <li><a href="./CampaignsEdit.html">Edit</a></li>
+                                <li><a onclick="delete_modal_1.showModal()">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                        <tr class="hover:bg-indigo-50/50 duration-200 text-sm border-b border-slate-100">
+                        <th class="text-center text-xs opacity-60 px-4 py-3">1</th>
+
+                        <td class="">
+                            <a class="font-bold  hover:underline font-mono text-xs whitespace-nowrap">Thailand Sem</a>
+                        </td>
+
+
+                        <td class="">
+                            <div class="flex items-center gap-1 text-slate-600 font-medium">
+
+                                Thailand
+                            </div>
+                        </td>
+
+                        <td class="">
+                            <span
+                                class="badge badge-sm badge-ghost font-bold text-xs text-slate-600 bg-slate-200/50 border-0">SEM</span>
+                        </td>
+
+                        <td class="">
+                            <div class="badge badge-success badge-sm badge-outline">Success</div>
+                        </td>
+
+                        <td class="whitespace-nowrap text-slate-600 font-medium">
+                            21Jun 25 - 31Dec 25
+                        </td>
+
+                        <td class="">
+                            <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+                            <button class="btn btn-xs border-none" popovertarget="popover-1"
+                                style="anchor-name:--anchor-1">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+                            <ul class="dropdown menu w-40 rounded-box bg-base-100 shadow-sm" popover id="popover-1"
+                                style="position-anchor:--anchor-1">
+                                <li><a href="./CampaignsView.html">View</a></li>
+                                <li><a href="./CampaignsEdit.html">Edit</a></li>
+                                <li><a onclick="delete_modal_1.showModal()">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="join m-3 pb-3">
+            <button class="join-item btn btn-md">1</button>
+            <button class="join-item btn btn-md btn-active">2</button>
+            <button class="join-item btn btn-md">3</button>
+            <button class="join-item btn btn-md">4</button>
         </div>
 
     </div>
@@ -531,6 +714,171 @@
 
         <form method="dialog" class="modal-backdrop">
             <button class="cursor-default">close</button>
+        </form>
+    </dialog>
+
+    <dialog id="campaign" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box w-11/12 max-w-2xl bg-white p-0 rounded-xl shadow-2xl">
+
+            <div class="flex justify-between items-center px-6 py-4 border-b border-slate-100">
+                <h3 class="font-bold text-lg text-slate-800">Create New Campaign</h3>
+                <form method="dialog">
+                    <button
+                        class="btn btn-sm btn-circle btn-ghost text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none">✕</button>
+                </form>
+            </div>
+
+            <div class="p-6">
+                <form class="space-y-4">
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Campaign Name</label>
+                        <input type="text"
+                            class="input input-bordered w-full h-10 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md" />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Description</label>
+                        <textarea
+                            class="textarea textarea-bordered w-full border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md resize-none h-24"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Type</label>
+                        <select
+                            class="select select-bordered w-full h-10 min-h-0 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md">
+                            <option selected>NA</option>
+                            <option>SEM</option>
+                            <option>SMM</option>
+                        </select>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <!--Destination-->
+                        <div class="flex-1">
+                            <label class="block text-sm font-medium text-slate-700 mb-1.5">Destination</label>
+                            <select
+                                class="select select-bordered w-full h-10 min-h-0 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md">
+                                <option disabled selected>Select Destination</option>
+                                <option>Thailand</option>
+                                <option>Dubai</option>
+                                <option>Vietnam</option>
+                            </select>
+                        </div>
+
+                        <!--Status-->
+                        <div class="flex-1">
+                            <label class="block text-sm font-medium text-slate-700 mb-1.5">Status</label>
+                            <select
+                                class="select select-bordered w-full h-10 min-h-0 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md">
+                                <option disabled selected>Select Status</option>
+                                <option>Active</option>
+                                <option>Paused</option>
+                                <option>Completed</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1.5">Start Date</label>
+                            <!--Calender Container-->
+                            <div class="">
+                                <div class="dropdown dropdown-top w-full">
+
+                                    <div tabindex="0" role="button"
+                                        class="btn bg-white border-slate-300 hover:bg-slate-50 hover:border-slate-400 text-slate-600 font-normal w-full justify-start h-10 min-h-0 rounded-lg px-4 flex items-center shadow-sm">
+                                        <span
+                                            class="material-icons text-[18px] mr-2 text-slate-400">calendar_month</span>
+                                        <span class="text-sm">06Apr Dec</span>
+                                    </div>
+
+                                    <div tabindex="0"
+                                        class="dropdown-content z-[100] mt-2 p-4 shadow-xl bg-white rounded-2xl border border-slate-200">
+                                        <calendar-date style="--color-accent: #6366f1; width: 100%;"
+                                            onchange="selectDate('departure-input', 'departure-calendar', event)">
+                                            <svg aria-label="Previous" slot="previous"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="w-5 h-5 text-slate-600">
+                                                <path fill-rule="evenodd"
+                                                    d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-slate-600">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <calendar-month></calendar-month>
+                                        </calendar-date>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1.5">End Date</label>
+                            <!--Calender Container-->
+                            <div class="">
+                                <div class="dropdown dropdown-top w-full">
+
+                                    <div tabindex="0" role="button"
+                                        class="btn bg-white border-slate-300 hover:bg-slate-50 hover:border-slate-400 text-slate-600 font-normal w-full justify-start h-10 min-h-0 rounded-lg px-4 flex items-center shadow-sm">
+                                        <span
+                                            class="material-icons text-[18px] mr-2 text-slate-400">calendar_month</span>
+                                        <span class="text-sm">07Apr 25</span>
+                                    </div>
+
+                                    <div tabindex="0"
+                                        class="dropdown-content z-[100] mt-2 p-4 shadow-xl bg-white rounded-2xl border border-slate-200">
+                                        <calendar-date style="--color-accent: #6366f1; width: 100%;"
+                                            onchange="selectDate('departure-input', 'departure-calendar', event)">
+                                            <svg aria-label="Previous" slot="previous"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="w-5 h-5 text-slate-600">
+                                                <path fill-rule="evenodd"
+                                                    d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-slate-600">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <calendar-month></calendar-month>
+                                        </calendar-date>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Source (optional)</label>
+                        <input type="text"
+                            class="input input-bordered w-full h-10 border-slate-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 text-slate-700 font-normal rounded-md" />
+                    </div>
+
+                    <div class="pt-4 pb-2">
+                        <button type="button"
+                            class="btn bg-[#3ba817] hover:bg-[#328f13] text-white border-none px-6 min-h-0 h-10 font-medium tracking-wide rounded-md">
+                            Create Campaign
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
         </form>
     </dialog>
 </body>
